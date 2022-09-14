@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- 日付-->
+          <div class="col-md-4">
             <card
               :title="stats.money.title"
               :value="stats.money.value"
@@ -14,7 +15,8 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- 今日の歩数 -->
+          <div class="col-md-4">
             <card
               :title="stats.users.title"
               :value="stats.users.value"
@@ -25,7 +27,8 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- カロリー -->
+          <div class="col-md-4">
             <card
               :title="stats.clients.title"
               :value="stats.clients.value"
@@ -37,17 +40,6 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <card
-              :title="stats.sales.title"
-              :value="stats.sales.value"
-              :percentage="stats.sales.percentage"
-              :iconClass="stats.sales.iconClass"
-              :iconBackground="stats.sales.iconBackground"
-              :detail="stats.sales.detail"
-              directionReverse
-            ></card>
-          </div>
         </div>
         <div class="row">
           <div class="col-lg-7 mb-lg">
@@ -56,8 +48,19 @@
               <gradient-line-chart />
             </div>
           </div>
+          <!-- 飲酒量  -->
           <div class="col-lg-5">
-            <carousel />
+            <card
+              :title="stats.drink.title"
+              :value="stats.drink.value"
+              :percentage="stats.drink.percentage"
+              :iconClass="stats.drink.iconClass"
+              :iconBackground="stats.drink.iconBackground"
+              :percentageColor="stats.drink.percentageColor"
+              :detail="stats.drink.detail"
+              directionReverse
+            ></card>
+            <!-- <carousel /> -->
           </div>
         </div>
         <div class="row mt-4">
@@ -65,7 +68,7 @@
             <div class="card">
               <div class="p-3 pb-0 card-header">
                 <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">Sales by Country</h6>
+                  <h6 class="mb-2">フレンド</h6>
                 </div>
               </div>
               <div class="table-responsive">
@@ -118,7 +121,7 @@
 <script>
 import Card from "@/examples/Cards/Card.vue";
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
-import Carousel from "./components/Carousel.vue";
+// import Carousel from "./components/Carousel.vue";
 import CategoriesCard from "./components/CategoriesCard.vue";
 
 import US from "@/assets/img/icons/flags/US.png";
@@ -132,37 +135,36 @@ export default {
     return {
       stats: {
         money: {
-          title: "Today's Money",
-          value: "$53,000",
-          percentage: "+55%",
+          title: "日付",
+          value: Date.now(),
           iconClass: "ni ni-money-coins",
-          detail: "since yesterday",
           iconBackground: "bg-gradient-primary",
         },
         users: {
-          title: "Today's Users",
-          value: "2,300",
+          title: "歩数",
+          value: "2,300" + "歩",
           percentage: "+3%",
-          iconClass: "ni ni-world",
+          iconClass: "ni ni-user-run",
           iconBackground: "bg-gradient-danger",
-          detail: "since last week",
+          detail: "前週比",
         },
         clients: {
-          title: "New Clients",
-          value: "+3,462",
+          title: "消費カロリー",
+          value: "3,000" + "kcal",
+          percentage: "-2%",
+          iconClass: "ni ni-sound-wave",
+          percentageColor: "text-danger",
+          iconBackground: "bg-gradient-success",
+          detail: "前日比",
+        },
+        drink: {
+          title: "飲酒量",
+          value: "ビール" + "3,000" + "杯",
           percentage: "-2%",
           iconClass: "ni ni-paper-diploma",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-success",
-          detail: "since last quarter",
-        },
-        sales: {
-          title: "Sales",
-          value: "$103,430",
-          percentage: "+5%",
-          iconClass: "ni ni-cart",
-          iconBackground: "bg-gradient-warning",
-          detail: "than last month",
+          detail: "前日比",
         },
       },
       sales: {
@@ -200,7 +202,7 @@ export default {
   components: {
     Card,
     GradientLineChart,
-    Carousel,
+    //Carousel,
     CategoriesCard,
   },
 };
