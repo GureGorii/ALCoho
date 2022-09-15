@@ -24,6 +24,7 @@
             <div class="col">
               <!--飲酒メーター-->
               <div class="cup-card">
+                <p>今日の飲めるお酒!!: <span>ビール✖︎2</span></p>
                 <div class="cup"></div>
               </div>
               <!-- <carousel /> -->
