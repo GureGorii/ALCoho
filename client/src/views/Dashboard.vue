@@ -76,7 +76,7 @@
             <div class="card">
               <div class="p-3 pb-0 card-header">
                 <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">フレンド</h6>
+                  <h6 class="mb-2">ともだち</h6>
                 </div>
               </div>
               <div class="table-responsive">
