@@ -122,7 +122,7 @@
 </script>
 <style scoped>
 .input-form {
-  min-width: 160px;
+  min-width: 100%;
   border-radius: 5px;
   border: solid 1px;
 }
