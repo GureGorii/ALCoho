@@ -1,9 +1,10 @@
-//team2 api作業2全件取得
+//ヘルスケア情報の全取得または条件による取得
 const AWS = require("aws-sdk");
 const dynamo = new AWS.DynamoDB.DocumentClient();
-const TableName = "Article";
+const TableName = "UserInfo";
 
 exports.handler = async (event, context) => {
+  //レスポンスの雛形
   const response = {
     statusCode: 200,
     headers: {
@@ -11,7 +12,10 @@ exports.handler = async (event, context) => {
     },
     body: JSON.stringify({ message: "" }),
   };
-  
+
+  const userId = event.queryStringParameters.userId;
+
+  //Tokenの認証
   if (event.headers.authorization !== "mtiToken") {
     response.statusCode = 500;
     response.body = JSON.stringify({
@@ -19,19 +23,19 @@ exports.handler = async (event, context) => {
     });
     return response;
   }
-  //TODO: 取得対象のテーブル名をparamに宣言
+  //TODO: 取得対象のテーブル名と検索に使うキーをparamに宣言
   const param = {
     TableName,
-    Limit: 50
+    Key: {
+      userId
+    }
   };
 
   try {
-    // dynamo.scan()で全件取得
-    const users = (await dynamo.scan(param).promise()).Items;
-
-    //TODO: レスポンスボディを設定する
-    response.body = JSON.stringify({ users });
-
+    // dynamo.get()でDBからデータを取得
+    const userinfo = (await dynamo.get(param).promise()).Item;
+    delete userinfo?.password;
+    response.body = JSON.stringify(userinfo)
   }
   catch (e) {
     response.statusCode = 500;

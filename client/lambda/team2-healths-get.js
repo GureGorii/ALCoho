@@ -1,6 +1,7 @@
+//ヘルスケア情報の全取得または条件による取得
 const AWS = require("aws-sdk");
 const dynamo = new AWS.DynamoDB.DocumentClient();
-const TableName = "Team2Article";
+const TableName = "Health";
 
 exports.handler = async (event, context) => {
   //レスポンスの雛形
@@ -14,9 +15,9 @@ exports.handler = async (event, context) => {
 
   const body = JSON.parse(event.body);
   const userId = body.userId
-  const end = body.end !== undefined ? body.end : Date.now()
-  const start = body.start !== undefined ? body.start : 0
-  const category = body.category;
+  const end = body.end !== undefined ? body.end : 99999999
+  const start = body.start !== undefined ? body.start :0
+  const healthId = body.healthId;
 
   //Tokenの認証
   if (event.headers.authorization !== "mtiToken") {
@@ -27,16 +28,13 @@ exports.handler = async (event, context) => {
     return response;
   }
   //TODO: 取得対象のテーブル名と検索に使うキーをparamに宣言
-  //カテゴリーの有無で条件分岐する
+  //healthIdの有無で条件分岐する
   let param
 
-  if (category === undefined) {
+  if (healthId === undefined) {
     param = {
       TableName,
-      KeyConditionExpression: 'userId = :userId AND #DocTimestamp BETWEEN :from_time AND :to_time',
-      ExpressionAttributeNames: {
-        '#DocTimestamp': 'timestamp'
-      },
+      KeyConditionExpression: 'userId = :userId AND healthId BETWEEN :from_time AND :to_time',
       ExpressionAttributeValues: {
         ':userId': userId,
         ':from_time': start,
@@ -47,16 +45,10 @@ exports.handler = async (event, context) => {
   else {
     param = {
       TableName,
-      KeyConditionExpression: 'userId = :userId AND #DocTimestamp BETWEEN :from_time AND :to_time',
-      ExpressionAttributeNames: {
-        '#DocTimestamp': 'timestamp'
-      },
-      FilterExpression: "category = :category",
+      KeyConditionExpression: 'userId = :userId AND healthId = :healthId',
       ExpressionAttributeValues: {
         ':userId': userId,
-        ':category': category && category,
-        ':from_time': start,
-        ':to_time': end,
+        ':healthId':healthId,
       },
     };
   }
