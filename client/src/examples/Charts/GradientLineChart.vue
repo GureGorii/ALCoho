@@ -18,7 +18,7 @@
 
 <script>
 import Chart from "chart.js/auto";
-//import user from '@/assets/sampleData.json'; 
+//import user from '/src/assets/sampleData.json'; 
 
 
 
@@ -26,6 +26,7 @@ export default {
   name: "gradient-line-chart",
   data(){
     return{
+      //user:user,
       sdata:
       {
         id:[
@@ -65,7 +66,7 @@ export default {
             index: 4,
             date: 5,
             step: 2393,
-            aDayCalorie: 506,
+            aDayCalorie: 2393/100*3.5 ,
             basalMetabolism: 1530
           },
 
@@ -305,7 +306,7 @@ export default {
     for(var i = 0; i<30; i++){
       num[i] = Math.floor( Math.random() * 30 ) ;
     };
-
+    //export { num };
     gradientStroke1.addColorStop(1, "rgba(94, 114, 228, 0.2)");
     gradientStroke1.addColorStop(0.2, "rgba(94, 114, 228, 0.0)");
     gradientStroke1.addColorStop(0, "rgba(94, 114, 228, 0)");

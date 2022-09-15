@@ -1,246 +1,246 @@
 
   {
-    sampleData:[
+    "sampleData":[
     {
-        id1:
+        "id1" :
           {
-            index: 0,
-            date: 0901, //
-            step: 514,  //
-            aDayCalorie: 459, //  100歩で3.5Kcal
-            basalMetabolism: 1530
+            "index": 0,
+            "date": 0901, //
+            "step": 514,  //
+            "aDayCalorie": 459, //  100歩で3.5Kcal
+            "basalMetabolism": 1530
           },
-          id2:
+          "id2":
           {
-            index: 1,
-            date: 0902,
-            step: 14913,
-            aDayCalorie: 452,
-            basalMetabolism: 1530
+            "index": 1,
+            "date": 0902,
+            "step": 14913,
+            "aDayCalorie": 452,
+            "basalMetabolism": 1530
           },
-          id3:
+          "id3":
           {
-            index: 2,
-            date: 0903,
-            step: 9786,
-            aDayCalorie: 342,
-            basalMetabolism: 1530
+            "index": 2,
+            "date": 0903,
+            "step": 9786,
+            "aDayCalorie": 342,
+            "basalMetabolism": 1530
           },
-          id4:
+          "id4":
           {
-            index: 3,
-            date: 0904,
-            step: 3631,
-            aDayCalorie: 324,
-            basalMetabolism: 1530
+            "index": 3,
+            "date": 0904,
+            "step": 3631,
+            "aDayCalorie": 324,
+            "basalMetabolism": 1530
           },
-          id5:
+          "id5":
           {
-            index: 4,
-            date: 0905,
-            step: 2393,
-            aDayCalorie: 506,
-            basalMetabolism: 1530
+            "index": 4,
+            "date": 0905,
+            "step": 2393,
+            "aDayCalorie": 506,
+            "basalMetabolism": 1530
           },
-          id6:
+          "id6":
           {
-            index: 5,
-            date: 0906,
-            step: 6260,
-            aDayCalorie: 516,
-            basalMetabolism: 1530
+            "index": 5,
+            "date": 0906,
+            "step": 6260,
+            "aDayCalorie": 516,
+            "basalMetabolism": 1530
           },
-          id7:
+          "id7":
           {
-            index: 6,
-            date: 0907,
-            step: 5933,
-            aDayCalorie: 217,
-            basalMetabolism: 1530
+            "index": 6,
+            "date": 0907,
+            "step": 5933,
+            "aDayCalorie": 217,
+            "basalMetabolism": 1530
           },
-          id8:
+          "id8":
           {
-            index: 7,
-            date: 0908,
-            step: 6974,
-            aDayCalorie: 689,
-            basalMetabolism: 1530
+            "index": 7,
+            "date": 0908,
+            "step": 6974,
+            "aDayCalorie": 689,
+            "basalMetabolism": 1530
           },
-          id9:
+          "id9":
           {
-            index: 8,
-            date: 0909,
-            step: 8460,
-            aDayCalorie: 526,
-            basalMetabolism: 1530
+            "index": 8,
+            "date": 0909,
+            "step": 8460,
+            "aDayCalorie": 526,
+            "basalMetabolism": 1530
           },
-          id10:
+          "id10":
           {
-            index: 9,
-            date: 0910,
-            step: 6539,
-            aDayCalorie: 388,
-            basalMetabolism: 1530
+            "index": 9,
+            "date": 0910,
+            "step": 6539,
+            "aDayCalorie": 388,
+            "basalMetabolism": 1530
           },
-          id11:
+          "id11":
           {
-            index: 10,
-            date: 0911,
-            step: 7187,
-            aDayCalorie: 377,
-            basalMetabolism: 1530
+            "index": 10,
+            "date": 0911,
+            "step": 7187,
+            "aDayCalorie": 377,
+            "basalMetabolism": 1530
           },
-          id12:
+          "id12":
           {
-            index: 11,
-            date: 0912,
-            step: 11763,
-            aDayCalorie: 172,
-            basalMetabolism: 1530
+            "index": 11,
+            "date": 0912,
+            "step": 11763,
+            "aDayCalorie": 172,
+            "basalMetabolism": 1530
           },
-          id13:
+          "id13":
           {
-            index: 12,
-            date: 0913,
-            step: 14322,
-            aDayCalorie: 404,
-            basalMetabolism: 1530
+            "index": 12,
+            "date": 0913,
+            "step": 14322,
+            "aDayCalorie": 404,
+            "basalMetabolism": 1530
           },
-          id14:
+          "id14":
           {
-            index: 13,
-            date: 0914,
-            step: 881,
-            aDayCalorie: 622,
-            basalMetabolism: 1530
+            "index": 13,
+            "date": 0914,
+            "step": 881,
+            "aDayCalorie": 622,
+            "basalMetabolism": 1530
           },
-          id15:
+          "id15":
           {
-            index: 14,
-            date: 0915,
-            step: 6517,
-            aDayCalorie: 388,
-            basalMetabolism: 1530
+            "index": 14,
+            "date": 0915,
+            "step": 6517,
+            "aDayCalorie": 388,
+            "basalMetabolism": 1530
           },
-          id16:
+          "id16":
           {
-            index: 15,
-            date: 0916,
-            step: 1946,
-            aDayCalorie: 233,
-            basalMetabolism: 1530
+            "index": 15,
+            "date": 0916,
+            "step": 1946,
+            "aDayCalorie": 233,
+            "basalMetabolism": 1530
           },
-          id17:
+          "id17":
           {
-            index: 16,
-            date: 0917,
-            step: 8185,
-            aDayCalorie: 642,
-            basalMetabolism: 1530
+            "index": 16,
+            "date": 0917,
+            "step": 8185,
+            "aDayCalorie": 642,
+            "basalMetabolism": 1530
           },
-          id18:
+          "id18":
           {
-            index: 17,
-            date: 0918,
-            step: 13227,
-            aDayCalorie: 400,
-            basalMetabolism: 1530
+            "index": 17,
+            "date": 0918,
+            "step": 13227,
+            "aDayCalorie": 400,
+            "basalMetabolism": 1530
           },
-          id19:
+          "id19":
           {
-            index: 18,
-            date: 0919,
-            step: 409,
-            aDayCalorie: 428,
-            basalMetabolism: 1530
+            "index": 18,
+            "date": 0919,
+            "step": 409,
+            "aDayCalorie": 428,
+            "basalMetabolism": 1530
           },
-          id20:
+          "id20":
           {
-            index: 19,
-            date: 0920,
-            step: 9185,
-            aDayCalorie: 404,
-            basalMetabolism: 1530
+            "index": 19,
+            "date": 0920,
+            "step": 9185,
+            "aDayCalorie": 404,
+            "basalMetabolism": 1530
           },
-          id21:
+          "id21":
           {
-            index: 20,
-            date: 0921,
-            step: 3340,
-            aDayCalorie: 342,
-            basalMetabolism: 1530
+            "index": 20,
+            "date": 0921,
+            "step": 3340,
+            "aDayCalorie": 342,
+            "basalMetabolism": 1530
           },
-          id22:
+          "id22":
           {
-            index: 21,
-            date: 0922,
-            step: 1201,
-            aDayCalorie: 199,
-            basalMetabolism: 1530
+            "index": 21,
+            "date": 0922,
+            "step": 1201,
+            "aDayCalorie": 199,
+            "basalMetabolism": 1530
           },
-          id23:
+          "id23":
           {
-            index: 22,
-            date: 0923,
-            step: 9604,
-            aDayCalorie: 491,
-            basalMetabolism: 1530
+            "index": 22,
+            "date": 0923,
+            "step": 9604,
+            "aDayCalorie": 491,
+            "basalMetabolism": 1530
           },
-          id24:
+          "id24":
           {
-            index: 23,
-            date: 0924,
-            step: 8552,
-            aDayCalorie: 213,
-            basalMetabolism: 1530
+            "index": 23,
+            "date": 0924,
+            "step": 8552,
+            "aDayCalorie": 213,
+            "basalMetabolism": 1530
           },
-          id25:
+          "id25":
           {
-            index: 24,
-            date: 0925,
-            step: 307,
-            aDayCalorie: 313,
-            basalMetabolism: 1530
+            "index": 24,
+            "date": 0925,
+            "step": 307,
+            "aDayCalorie": 313,
+            "basalMetabolism": 1530
           },
-          id26:
+          "id26":
           {
-            index: 25,
-            date: 0926,
-            step: 8455,
-            aDayCalorie: 393,
-            basalMetabolism: 1530
+            "index": 25,
+            "date": 0926,
+            "step": 8455,
+            "aDayCalorie": 393,
+            "basalMetabolism": 1530
           },
-          id27:
+          "id27":
           {
-            index: 26,
-            date: 0927,
-            step: 9560,
-            aDayCalorie: 500,
-            basalMetabolism: 1530
+            "index": 26,
+            "date": 0927,
+            "step": 9560,
+            "aDayCalorie": 500,
+            "basalMetabolism": 1530
           },
-          id28:
+          "id28":
           {
-            index: 27,
-            date: 0928,
-            step: 9376,
-            aDayCalorie: 678,
-            basalMetabolism: 1530
+            "index": 27,
+            "date": 0928,
+            "step": 9376,
+            "aDayCalorie": 678,
+            "basalMetabolism": 1530
           },
-          id29:
+          "id29":
           {
-            index: 28,
-            date: 0929,
-            step: 3111,
-            aDayCalorie: 331,
-            basalMetabolism: 1530
+            "index": 28,
+            "date": 0929,
+            "step": 3111,
+            "aDayCalorie": 331,
+            "basalMetabolism": 1530
           },
-          id30:
+          "id30":
           {
-            index: 29,
-            date: 0930,
-            step: 8700,
-            aDayCalorie: 603,
-            basalMetabolism: 1530
+            "index": 29,
+            "date": 0930,
+            "step": 8700,
+            "aDayCalorie": 603,
+            "basalMetabolism": 1530
           }
        
     }
