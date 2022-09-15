@@ -143,29 +143,17 @@ export default {
       type: String,
       default: "250 kcal",
     },
-    titleDesc2: {
-      type: String,
-      default: "346+ sold",
-    },
     title2Desc: {
       type: String,
-      default: "123 kcal",
-    },
-    title2Desc2: {
-      type: String,
-      default: "15 open",
+      default: "183 kcal",
     },
     title3Desc: {
       type: String,
-      default: "1 is kcal",
-    },
-    title3Desc2: {
-      type: String,
-      default: "+40",
+      default: "153 kcal",
     },
     title4Desc: {
       type: String,
-      default: "1 kcal",
+      default: "130 kcal",
     },
   },
 };
