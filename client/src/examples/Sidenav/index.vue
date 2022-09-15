@@ -13,8 +13,13 @@
     <div class="sidenav-header">
       <i class="top-0 p-3 cursor-pointer fas fa-times text-secondary opacity-5 position-absolute end-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <router-link class="m-0 navbar-brand" to="/">
-
-        <h3 class="ms-2 font-weight-bold me-2">ALCoho</h3>
+        <h3 class="ms-2 font-weight-bold me-2">
+          <img
+          src="../../../public/beer.png"
+          alt="profile_image"
+          class="shadow-sm w-20 border-radius-lg"
+        />
+        ALCoho</h3>
       </router-link>
     </div>
     <hr class="mt-0 horizontal dark" />
