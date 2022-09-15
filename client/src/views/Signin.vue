@@ -20,13 +20,13 @@
                 <div class="card-body">
                   <form role="form" @submit.prevent="submit">
                     <div class="mb-3">
-                      <input type="text" placeholder="userId" name="userId" size="lg" v-model="user.userId" class="input-form"/>
+                      <input type="text" placeholder="userId" name="userId" size="lg" v-model="user.userId" class="input-form" />
                     </div>
                     <div class="mb-3">
-                      <input type="password" placeholder="Password" name="password" size="lg" v-model="user.password" class="input-form"/>
+                      <input type="password" placeholder="Password" name="password" size="lg" v-model="user.password" class="input-form" />
                     </div>
                     <div class="text-center">
-                      <argon-button class="mt-4" variant="gradient" color="success" fullWidth size="lg" >Sign in</argon-button>
+                      <argon-button class="mt-4" variant="gradient" color="success" fullWidth size="lg">Sign in</argon-button>
                     </div>
                   </form>
                 </div>
@@ -83,7 +83,6 @@
     },
     methods: {
       async submit() {
-        console.log('ボタンが押された')
         const headers = { 'Authorization': 'mtiToken' }
         // リクエストボディを指定する
         const requestBody = {
@@ -97,7 +96,11 @@
           // 成功時の処理
           window.localStorage.setItem('token', res.data.token);
           window.localStorage.setItem('userId', this.user.userId)
-          this.$router.push({ name: "Dashboard",})
+          this.tokens = window.localStorage.getItem("token")
+          this.$store.dispatch("setTokens", this.tokens).then(() => {
+            this.$router.push({ name: "Dashboard", })
+          });
+
           console.log('res.data: ', res.data)
         }
         catch (e) {
@@ -117,10 +120,9 @@
   };
 </script>
 <style scoped>
-.input-form {
-  min-width: 100%;
-  border-radius: 5px;
-  border: solid 1px;
-}
-
+  .input-form {
+    min-width: 100%;
+    border-radius: 5px;
+    border: solid 1px;
+  }
 </style>
