@@ -101,7 +101,7 @@
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                       <h6 class="mb-1 text-sm font-weight-normal">
-                        <span class="font-weight-bold">New message</span> from
+                        <span class="font-weight-bold">New message</span> from    <!--左上の通知画面-->
                         Laur
                       </h6>
                       <p class="mb-0 text-xs text-secondary">

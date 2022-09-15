@@ -1,9 +1,10 @@
 <template>
-  <div class="py-4 container-fluid">
+   <div class="py-4 container-fluid">
     <div class="row">
       <div class="col-lg-12">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- 日付-->
+          <div class="col-lg-4">
             <card
               :title="stats.money.title"
               :value="stats.money.value"
@@ -14,7 +15,8 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- 今日の歩数 -->
+          <div class="col-lg-4">
             <card
               :title="stats.users.title"
               :value="stats.users.value"
@@ -25,7 +27,8 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <!-- カロリー -->
+          <div class="col-lg-4">
             <card
               :title="stats.clients.title"
               :value="stats.clients.value"
@@ -37,27 +40,35 @@
               directionReverse
             ></card>
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <card
-              :title="stats.sales.title"
-              :value="stats.sales.value"
-              :percentage="stats.sales.percentage"
-              :iconClass="stats.sales.iconClass"
-              :iconBackground="stats.sales.iconBackground"
-              :detail="stats.sales.detail"
-              directionReverse
-            ></card>
-          </div>
         </div>
         <div class="row">
-          <div class="col-lg-7 mb-lg">
+          <!-- 飲酒量  -->
+          <div class="col-lg-5">
+            <card
+              :title="stats.drink.title"
+              :value="stats.drink.value"
+              :percentage="stats.drink.percentage"
+              :value2="stats.drink.value2"
+              :percentage2="stats.drink.percentage2"
+              :value3="stats.drink.value3"
+              :percentage3="stats.drink.percentage3"
+              :iconClass="stats.drink.iconClass"
+              :iconBackground="stats.drink.iconBackground"
+              :percentageColor="stats.drink.percentageColor"
+              :detail="stats.drink.detail"
+              directionReverse
+            >
+              <button class="btn btn-primary btn-space" @click="frmCreateAccountPopup.show(true)">
+                アカウントの作成
+              </button>
+            </card>
+            <!-- <carousel /> -->
+          </div>
+            <div class="col-lg-7 mb-lg">
             <!-- line chart -->
             <div class="card z-index-2">
               <gradient-line-chart />
             </div>
-          </div>
-          <div class="col-lg-5">
-            <carousel />
           </div>
         </div>
         <div class="row mt-4">
@@ -65,7 +76,7 @@
             <div class="card">
               <div class="p-3 pb-0 card-header">
                 <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">Sales by Country</h6>
+                  <h6 class="mb-2">フレンド</h6>
                 </div>
               </div>
               <div class="table-responsive">
@@ -75,30 +86,30 @@
                       <td class="w-30">
                         <div class="px-2 py-1 d-flex align-items-center">
                           <div>
-                            <img :src="sale.flag" alt="Country flag" />
+                            <img :src="sale.flag" alt="person icon" />
                           </div>
                           <div class="ms-4">
-                            <p class="mb-0 text-xs font-weight-bold">Country:</p>
-                            <h6 class="mb-0 text-sm">{{ sale.country }}</h6>
+                            <p class="mb-0 text-xs font-weight-bold">名前:</p>
+                            <h6 class="mb-0 text-sm">{{ sale.name }}</h6>
                           </div>
                         </div>
                       </td>
                       <td>
                         <div class="text-center">
-                          <p class="mb-0 text-xs font-weight-bold">Sales:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.sales }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">歩数:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.step }}</h6>
                         </div>
                       </td>
                       <td>
                         <div class="text-center">
-                          <p class="mb-0 text-xs font-weight-bold">Value:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.value }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">消費カロリー:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.cal }}</h6>
                         </div>
                       </td>
                       <td class="text-sm align-middle">
                         <div class="text-center col">
-                          <p class="mb-0 text-xs font-weight-bold">Bounce:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.bounce }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">飲酒可能量:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.drink }}</h6>
                         </div>
                       </td>
                     </tr>
@@ -118,81 +129,94 @@
 <script>
 import Card from "@/examples/Cards/Card.vue";
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
-import Carousel from "./components/Carousel.vue";
+// import Carousel from "./components/Carousel.vue";
 import CategoriesCard from "./components/CategoriesCard.vue";
 
-import US from "@/assets/img/icons/flags/US.png";
-import DE from "@/assets/img/icons/flags/DE.png";
-import GB from "@/assets/img/icons/flags/GB.png";
-import BR from "@/assets/img/icons/flags/BR.png";
 
+import PI from "@/assets/img/icons/flags/personicon.png";
+
+let d = new Date();
+let year = d.getUTCFullYear();
+let month = d.getUTCMonth() + 1;
+let day = d.getUTCDate();
+
+let time = year + '年' + month + '月' + day + '日';
 export default {
   name: "dashboard-default",
   data() {
     return {
       stats: {
         money: {
-          title: "Today's Money",
-          value: "$53,000",
-          percentage: "+55%",
-          iconClass: "ni ni-money-coins",
-          detail: "since yesterday",
+
+          value: time,
+          iconClass: "ni ni-calendar-grid-58",
+
           iconBackground: "bg-gradient-primary",
         },
         users: {
-          title: "Today's Users",
-          value: "2,300",
+          title: "歩数",
+          value: "2,300" + "歩",
           percentage: "+3%",
-          iconClass: "ni ni-world",
+          iconClass: "ni ni-user-run",
           iconBackground: "bg-gradient-danger",
-          detail: "since last week",
+          detail: "前週比",
         },
         clients: {
-          title: "New Clients",
-          value: "+3,462",
+          title: "消費カロリー",
+          value: "3,000" + "kcal",
           percentage: "-2%",
-          iconClass: "ni ni-paper-diploma",
+          iconClass: "fa fa-cutlery",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-success",
-          detail: "since last quarter",
+          detail: "前日比",
         },
-        sales: {
-          title: "Sales",
-          value: "$103,430",
-          percentage: "+5%",
-          iconClass: "ni ni-cart",
+        drink: {
+          title: "飲酒可能量",
+          value: "ビール" + "3,000" + "杯",
+          percentage: "-2%",
+          value2: "ハイボール" + "4000" + "杯",
+          percentage2: "-5%",
+          value3: "レモンサワー" + "3700" + "杯",
+          percentage3: "-4%",
+          iconClass: "fa fa-beer",
+          percentageColor: "text-danger",
           iconBackground: "bg-gradient-warning",
-          detail: "than last month",
+
+          detail: "前日比",
         },
       },
       sales: {
         us: {
-          country: "United States",
-          sales: 2500,
-          value: "$230,900",
-          bounce: "29.9%",
-          flag: US,
+          name: "Yamada Taro",
+          step: 2500,
+          cal: "$230,900",
+          drink: "29.9%",
+          flag: PI,
+
         },
         germany: {
-          country: "Germany",
-          sales: "3.900",
-          value: "$440,000",
-          bounce: "40.22%",
-          flag: DE,
+          name: "Germany",
+          step: "3.900",
+          cal: "$440,000",
+          drink: "40.22%",
+          flag: PI,
+
         },
         britain: {
-          country: "Great Britain",
-          sales: "1.400",
-          value: "$190,700",
-          bounce: "23.44%",
-          flag: GB,
+          name: "Great Britain",
+          step: "1.400",
+          cal: "$190,700",
+          drink: "23.44%",
+          flag: PI,
+
         },
         brasil: {
-          country: "Brasil",
-          sales: "562",
-          value: "$143,960",
-          bounce: "32.14%",
-          flag: BR,
+          name: "Brasil",
+          step: "562",
+          cal: "$143,960",
+          drink: "32.14%",
+          flag: PI,
+
         },
       },
     };
@@ -200,7 +224,7 @@ export default {
   components: {
     Card,
     GradientLineChart,
-    Carousel,
+    //Carousel,
     CategoriesCard,
   },
 };

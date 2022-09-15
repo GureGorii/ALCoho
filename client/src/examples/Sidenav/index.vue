@@ -25,17 +25,8 @@
         id="iconSidenav"
       ></i>
       <router-link class="m-0 navbar-brand" to="/">
-        <img
-          :src="
-            this.$store.state.darkMode ||
-            this.$store.state.sidebarType === 'bg-default'
-              ? logoWhite
-              : logo
-          "
-          class="navbar-brand-img h-100"
-          alt="main_logo"
-        />
-        <span class="ms-2 font-weight-bold me-2">Argon Dashboard 2</span>
+        
+        <h3 class="ms-2 font-weight-bold me-2">ALCoho</h3>
       </router-link>
     </div>
     <hr class="mt-0 horizontal dark" />
