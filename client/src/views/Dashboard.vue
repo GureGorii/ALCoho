@@ -21,11 +21,15 @@
           <div class="col-lg-5">
             <card :title="stats.drink.title" :value="stats.drink.value" :percentage="stats.drink.percentage" :value2="stats.drink.value2" :percentage2="stats.drink.percentage2" :value3="stats.drink.value3" :percentage3="stats.drink.percentage3" :iconClass="stats.drink.iconClass" :iconBackground="stats.drink.iconBackground" :percentageColor="stats.drink.percentageColor" :detail="stats.drink.detail" directionReverse>
             </card>
-            <card :title="stats.drink.title" >
-            </card>
-            <!-- <carousel /> -->
+            <div class="col">
+              <!--飲酒メーター-->
+              <div class="cup-card">
+                <div class="cup"></div>
+              </div>
+              <!-- <carousel /> -->
+            </div>
           </div>
-          <div class="col-lg-7 mb-lg">
+          <div class="col-lg-5 mb-lg">
             <!-- line chart -->
             <div class="card z-index-2">
               <gradient-line-chart />
@@ -142,7 +146,7 @@
 
             detail: "前日比",
           },
-          
+
         },
         sales: {
           us: {
@@ -188,3 +192,31 @@
     },
   };
 </script>
+<style scope>
+  .cup-card {
+    border: 0 solid rgba(0, 0, 0, 0.125);
+    border-radius: 1rem;
+    border-bottom: 0 solid rgba(0, 0, 0, 0.125);
+    background-color: #fff;
+    background-clip: border-box;
+    /*box-sizing: border-box;*/
+    height: 255px;
+    padding: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.125);
+    margin-bottom: 25px;
+  }
+
+  .cup {
+    width: 100px;
+    /* コップの横幅を指定 */
+    height: 200px;
+    /* コップの高さを指定 */
+    border: solid 1px #999;
+    /* コップの縁を描画 */
+    border-top: none;
+    /* コップの上は線を消す */
+    background: linear-gradient(transparent 30%, #BF923B 30%);
+    margin: 0 auto;
+  }
+</style>
