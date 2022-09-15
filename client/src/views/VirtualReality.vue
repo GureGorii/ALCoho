@@ -16,6 +16,7 @@
     }"
   >
     <sidenav :custom_class="this.$store.state.mcolor" :class="isTransparent" class="fixed-start" />
+    
     <main class="mt-1 main-content border-radius-lg">
       <div class="section min-vh-85 position-relative transform-scale-0 transform-scale-md-7">
         <div class="container-fluid">

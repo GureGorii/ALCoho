@@ -16,9 +16,13 @@ export default createStore({
     showNavbar: true,
     showFooter: true,
     showMain: true,
-    layout: "default"
+    layout: "default",
+    tokens: ""
   },
   mutations: {
+    isLogined(state, payload) {
+      state.tokens = payload
+    },
     toggleConfigurator(state) {
       state.showConfig = !state.showConfig;
     },
@@ -49,7 +53,11 @@ export default createStore({
   actions: {
     toggleSidebarColor({ commit }, payload) {
       commit("sidebarType", payload);
-    }
+    },
+    setTokens ({commit }, payload) {
+          payload = window.localStorage.getItem('token')
+          commit("isLogined", payload)
+      },
   },
   getters: {}
 });

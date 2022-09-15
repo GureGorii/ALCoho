@@ -84,7 +84,6 @@
     },
     methods: {
       async submit() {
-        console.log('ボタンが押された')
         const headers = { 'Authorization': 'mtiToken' }
         // リクエストボディを指定する
         const requestBody = {
@@ -98,8 +97,10 @@
           // 成功時の処理
           window.localStorage.setItem('token', res.data.token);
           window.localStorage.setItem('userId', this.user.userId)
-          this.$router.push({ name: "Dashboard", })
-          console.log('res.data: ', res.data)
+          this.tokens = window.localStorage.getItem("token")
+          this.$store.dispatch("setTokens", this.tokens).then(() => {
+            this.$router.push({ name: "Dashboard", })
+          });
         }
         catch (e) {
           // エラー時の処理
