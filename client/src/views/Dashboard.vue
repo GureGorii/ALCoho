@@ -4,7 +4,9 @@
       <div class="col-lg-12">
         <div class="row">
           <!-- 日付-->
+
           <div class="col-md-4">
+
             <card
               :title="stats.money.title"
               :value="stats.money.value"
@@ -16,7 +18,9 @@
             ></card>
           </div>
           <!-- 今日の歩数 -->
+
           <div class="col-md-4">
+
             <card
               :title="stats.users.title"
               :value="stats.users.value"
@@ -28,7 +32,9 @@
             ></card>
           </div>
           <!-- カロリー -->
+
           <div class="col-md-4">
+
             <card
               :title="stats.clients.title"
               :value="stats.clients.value"
@@ -42,12 +48,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-7 mb-lg">
-            <!-- line chart -->
-            <div class="card z-index-2">
-              <gradient-line-chart />
-            </div>
-          </div>
+
           <!-- 飲酒量  -->
           <div class="col-lg-5">
             <card
@@ -59,10 +60,20 @@
               :percentageColor="stats.drink.percentageColor"
               :detail="stats.drink.detail"
               directionReverse
-            ></card>
+            >
+              <button class="btn btn-primary btn-space" @click="frmCreateAccountPopup.show(true)">
+                アカウントの作成
+              </button>
+            </card>
             <!-- <carousel /> -->
           </div>
-        </div>
+            <div class="col-lg-7 mb-lg">
+            <!-- line chart -->
+            <div class="card z-index-2">
+              <gradient-line-chart />
+            </div>
+          </div>
+
         <div class="row mt-4">
           <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card">
@@ -129,15 +140,22 @@ import DE from "@/assets/img/icons/flags/DE.png";
 import GB from "@/assets/img/icons/flags/GB.png";
 import BR from "@/assets/img/icons/flags/BR.png";
 
+let d = new Date();
+let year = d.getUTCFullYear();
+let month = d.getUTCMonth() + 1;
+let day = d.getUTCDate();
+
+let time = year + '年' + month + '月' + day + '日';
 export default {
   name: "dashboard-default",
   data() {
     return {
       stats: {
         money: {
-          title: "日付",
-          value: Date.now(),
+
+          value: time,
           iconClass: "ni ni-calendar-grid-58",
+
           iconBackground: "bg-gradient-primary",
         },
         users: {
@@ -159,11 +177,13 @@ export default {
         },
         drink: {
           title: "飲酒量",
+
           value: "ビール" + "3,000" + "杯",
           percentage: "-2%",
           iconClass: "fa fa-beer",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-warning",
+
           detail: "前日比",
         },
       },

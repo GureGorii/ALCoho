@@ -25,7 +25,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Sales overview",
+      default: "これまでの歩数",
     },
     detail1: {
       type: String,
@@ -48,7 +48,7 @@ export default {
     new Chart(ctx1, {
       type: "line",
       data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets: [
           {
             label: "Mobile apps",
@@ -60,7 +60,7 @@ export default {
             // eslint-disable-next-line no-dupe-keys
             borderWidth: 3,
             fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+            data: [50, 40, 300, 220, 500, 250, 400, 230, 500, 40, 300, 220, 500, 250, 400, 230, 500],
             maxBarThickness: 6,
           },
         ],
