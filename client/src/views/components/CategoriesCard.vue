@@ -14,7 +14,7 @@
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
               :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
             >
-              <i class="ni ni-mobile-button text-white opacity-10"></i>
+              <i class="ni ni-circle-08 text-white opacity-10"></i>
             </div>
             <div class="d-flex flex-column">
               <h6 class="mb-1 text-sm text-dark">{{ title }}</h6>
@@ -28,7 +28,7 @@
             <button
               class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
             >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
+              <i class="ni ni-trophy" aria-hidden="true"></i>
             </button>
           </div>
         </li>
@@ -41,7 +41,7 @@
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
               :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
             >
-              <i class="ni ni-tag text-white opacity-10"></i>
+              <i class="ni ni-circle-08 text-white opacity-10"></i>
             </div>
             <div class="d-flex flex-column">
               <h6 class="mb-1 text-sm text-dark">{{ title2 }}</h6>
@@ -55,7 +55,7 @@
             <button
               class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
             >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
+              <i class="ni ni-trophy" aria-hidden="true"></i>
             </button>
           </div>
         </li>
@@ -68,7 +68,7 @@
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
               :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
             >
-              <i class="ni ni-box-2 text-white opacity-10"></i>
+              <i class="ni ni-circle-08 text-white opacity-10"></i>
             </div>
             <div class="d-flex flex-column">
               <h6 class="mb-1 text-sm text-dark">{{ title3 }}</h6>
@@ -82,7 +82,7 @@
             <button
               class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
             >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
+              <i class="ni ni-trophy" aria-hidden="true"></i>
             </button>
           </div>
         </li>
@@ -95,7 +95,7 @@
               class="text-center shadow icon icon-shape icon-sm bg-gradient-dark"
               :class="this.$store.state.isRTL ? 'ms-3' : 'me-3'"
             >
-              <i class="ni ni-satisfied text-white opacity-10"></i>
+              <i class="ni ni-circle-08 text-white opacity-10"></i>
             </div>
             <div class="d-flex flex-column">
               <h6 class="mb-1 text-sm text-dark">{{ title4 }}</h6>
@@ -106,7 +106,7 @@
             <button
               class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right"
             >
-              <i class="ni ni-bold-right" aria-hidden="true"></i>
+              <i class="ni ni-trophy" aria-hidden="true"></i>
             </button>
           </div>
         </li>
@@ -117,31 +117,31 @@
 
 <script>
 export default {
-  name: "categories-card",
+  name: "ranking-card",
   props: {
     cardTitle: {
       type: String,
-      default: "Categories",
+      default: "ランキング",
     },
     title: {
       type: String,
-      default: "Devices",
+      default: "ユーザ1",
     },
     title2: {
       type: String,
-      default: "Tickets",
+      default: "ユーザ2",
     },
     title3: {
       type: String,
-      default: "Error logs",
+      default: "ユーザ3",
     },
     title4: {
       type: String,
-      default: "Happy Users",
+       default: "ユーザ4",
     },
     titleDesc: {
       type: String,
-      default: "250 in stock",
+      default: "250 kcal",
     },
     titleDesc2: {
       type: String,
@@ -149,11 +149,7 @@ export default {
     },
     title2Desc: {
       type: String,
-      default: "123 closed",
-    },
-    title4Desc: {
-      type: String,
-      default: "+ 430",
+      default: "123 kcal",
     },
     title2Desc2: {
       type: String,
@@ -161,11 +157,15 @@ export default {
     },
     title3Desc: {
       type: String,
-      default: "1 is active",
+      default: "1 is kcal",
     },
     title3Desc2: {
       type: String,
-      default: "40 closed",
+      default: "+40",
+    },
+    title4Desc: {
+      type: String,
+      default: "1 kcal",
     },
   },
 };

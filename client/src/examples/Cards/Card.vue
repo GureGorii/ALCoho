@@ -15,11 +15,23 @@
             <span class="text-sm"  :class="percentageColor">{{ percentage }}</span> 
             <span class="font-weight-light text-sm"> {{detail}}</span>
             </h5>
+            <h5 class="font-weight-bolder" :class="valueColor">{{ value2 }}
+            <span class="text-sm"  :class="percentageColor">{{ percentage2 }}</span> 
+            <span class="font-weight-light text-sm"> {{detail}}</span>
+            </h5>
+            <h5 class="font-weight-bolder" :class="valueColor">{{ value3 }}
+            <span class="text-sm"  :class="percentageColor">{{ percentage3 }}</span> 
+            <span class="font-weight-light text-sm"> {{detail}}</span>
+            </h5>
           </div>
           <div class="numbers" v-else>
             <p class="mb-0 text-sm text-uppercase font-weight-bold" :class="titleColor">{{ title }}</p>
             <h5 class="font-weight-bolder" :class="valueColor">{{ value }}</h5>
-            <span class="text-sm"  :class="percentageColor">{{ percentage }}</span> 
+            <span class="text-sm"  :class="percentageColor">{{ percentage }}</span>
+            <h5 class="font-weight-bolder" :class="valueColor">{{ value2 }}</h5>
+            <span class="text-sm"  :class="percentageColor">{{ percentage2 }}</span>
+            <h5 class="font-weight-bolder" :class="valueColor">{{ value3 }}</h5>
+            <span class="text-sm"  :class="percentageColor">{{ percentage3 }}</span> 
             {{detail}}
           </div>
         </div>
