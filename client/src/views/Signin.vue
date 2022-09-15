@@ -40,10 +40,15 @@
             </div>
             <div class="top-0 my-auto text-center col-6 d-lg-flex d-none h-100 pe-0 position-absolute end-0 justify-content-center flex-column">
               <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
-          background-size: cover;">
+          background-size: cover;"
                 <span class="mask bg-gradient-success opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
-                <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">歩いた分だけ酒がうまい</h4>
+                <p class="text-white position-relative">歩いた数に応じてお酒メータが貯まり、おいしく楽しくエネルギーを燃やしましょう</p>
+                <img
+                  src="../assets/img/team-1.jpg"
+                  alt="profile_image"
+                  class="shadow-sm w-100 border-radius-lg"
+                />
               </div>
             </div>
           </div>
@@ -57,8 +62,6 @@
   import { baseUrl } from '@/assets/config.js';
   import axios from "axios";
   import Navbar from "@/examples/PageLayout/Navbar.vue";
-  import ArgonInput from "@/components/ArgonInput.vue";
-  import ArgonSwitch from "@/components/ArgonSwitch.vue";
   import ArgonButton from "@/components/ArgonButton.vue";
   const body = document.getElementsByTagName("body")[0];
 
@@ -66,8 +69,6 @@
     name: "signin",
     components: {
       Navbar,
-      ArgonInput,
-      ArgonSwitch,
       ArgonButton,
     },
     created() {
