@@ -4,7 +4,9 @@
       <div class="col-lg-12">
         <div class="row">
           <!-- 日付-->
-          <div class="col-lg-4">
+
+          <div class="col-md-4">
+
             <card
               :title="stats.money.title"
               :value="stats.money.value"
@@ -16,7 +18,9 @@
             ></card>
           </div>
           <!-- 今日の歩数 -->
-          <div class="col-lg-4">
+
+          <div class="col-md-4">
+
             <card
               :title="stats.users.title"
               :value="stats.users.value"
@@ -28,7 +32,9 @@
             ></card>
           </div>
           <!-- カロリー -->
-          <div class="col-lg-4">
+
+          <div class="col-md-4">
+
             <card
               :title="stats.clients.title"
               :value="stats.clients.value"
@@ -42,6 +48,7 @@
           </div>
         </div>
         <div class="row">
+
           <!-- 飲酒量  -->
           <div class="col-lg-5">
             <card
@@ -66,7 +73,7 @@
               <gradient-line-chart />
             </div>
           </div>
-        </div>
+
         <div class="row mt-4">
           <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card">
@@ -145,16 +152,17 @@ export default {
     return {
       stats: {
         money: {
-          title: "日付",
+
           value: time,
-          iconClass: "ni ni-money-coins",
+          iconClass: "ni ni-calendar-grid-58",
+
           iconBackground: "bg-gradient-primary",
         },
         users: {
           title: "歩数",
           value: "2,300" + "歩",
           percentage: "+3%",
-          iconClass: "ni ni-world",
+          iconClass: "ni ni-user-run",
           iconBackground: "bg-gradient-danger",
           detail: "前週比",
         },
@@ -162,18 +170,20 @@ export default {
           title: "消費カロリー",
           value: "3,000" + "kcal",
           percentage: "-2%",
-          iconClass: "ni ni-paper-diploma",
+          iconClass: "fa fa-cutlery",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-success",
           detail: "前日比",
         },
         drink: {
           title: "飲酒量",
-          value: "ビール " + "3,000" + "杯",
+
+          value: "ビール" + "3,000" + "杯",
           percentage: "-2%",
-          iconClass: "ni ni-paper-diploma",
+          iconClass: "fa fa-beer",
           percentageColor: "text-danger",
-          iconBackground: "bg-gradient-success",
+          iconBackground: "bg-gradient-warning",
+
           detail: "前日比",
         },
       },

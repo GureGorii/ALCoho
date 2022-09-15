@@ -8,7 +8,8 @@
         <sidenav-item
           url="/dashboard-default"
           :class="getRoute() === 'dashboard-default' ? 'active' : ''"
-          :navText="'ダッシュボード'"
+          :navText="'Home'"
+
         >
           <template v-slot:icon>
             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4 card">
+  <div class="mb-2 card">
     <div class="p-3 card-body">
       <div class="d-flex" :class="directionReverse ? reverseDirection : ''">
         <div>
@@ -10,7 +10,7 @@
         </div>
         <div :class="contentClass">
           <div class="numbers" v-if="this.$store.state.isRTL">
-            <p class="mb-0 text-sm text-uppercase font-weight-bold" :class="titleColor">{{ title }}</p>
+            <p class="mb-0 text-sm text-uppercase font-weight-bold" :class="titleColor">ああああああああああああ</p>
             <h5 class="font-weight-bolder" :class="valueColor">{{ value }}
             <span class="text-sm"  :class="percentageColor">{{ percentage }}</span> 
             <span class="font-weight-light text-sm"> {{detail}}</span>
