@@ -6,6 +6,11 @@
           <!-- 日付-->
           <div class="col-lg-4">
             <card :title="stats.money.title" :value="stats.money.value" :percentage="stats.money.percentage" :iconClass="stats.money.iconClass" :iconBackground="stats.money.iconBackground" :detail="stats.money.detail" directionReverse></card>
+            <!--
+            <div class="col">
+              <regist-card class="mt-4" />
+            </div>
+            -->
           </div>
           <!-- 今日の歩数 -->
           <div class="col-lg-4">
@@ -21,16 +26,26 @@
           <div class="col-lg-5">
             <card :title="stats.drink.title" :value="stats.drink.value" :percentage="stats.drink.percentage" :value2="stats.drink.value2" :percentage2="stats.drink.percentage2" :value3="stats.drink.value3" :percentage3="stats.drink.percentage3" :iconClass="stats.drink.iconClass" :iconBackground="stats.drink.iconBackground" :percentageColor="stats.drink.percentageColor" :detail="stats.drink.detail" directionReverse>
             </card>
-            <div class="col">
+              <div class="col">
               <!--飲酒メーター-->
               <div class="cup-card">
+                <div class="col-15 d-flex align-items-left">
+                  <h6 class="mb-0">飲酒記録</h6>
+                  <div class="col text-end align-items-right">
+                    <argon-button color="success" size="sm" variant="outline" @click="frmCreateAccountPopup.show(true)">
+                      登録
+                    </argon-button>
+                  </div>
+                </div>
+                
                 <p>今日の飲めるお酒!!: <span>ビール✖︎2</span></p>
                 <div class="cup"></div>
+                
               </div>
               <!-- <carousel /> -->
             </div>
           </div>
-          <div class="col-lg-5 mb-lg">
+          <div class="col-lg-7 mb-lg">
             <!-- line chart -->
             <div class="card z-index-2">
               <gradient-line-chart />
@@ -97,14 +112,13 @@
   import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
   // import Carousel from "./components/Carousel.vue";
   import RankingCard from "./components/CategoriesCard.vue";
-
+  import RegistCard from "./components/RegistCard.vue" ;
+  import ArgonButton from "@/components/ArgonButton.vue";
   import PI from "@/assets/img/icons/flags/personicon.png";
-
   let d = new Date();
   let year = d.getUTCFullYear();
   let month = d.getUTCMonth() + 1;
   let day = d.getUTCDate();
-
   let time = year + '年' + month + '月' + day + '日';
   export default {
     name: "dashboard-default",
@@ -135,19 +149,17 @@
           },
           drink: {
             title: "飲酒可能量",
-            value: "ビール" + "3,000" + "杯",
+            value: "ビール" + "3" + "杯",
             percentage: "-2%",
-            value2: "ハイボール" + "4000" + "杯",
+            value2: "ハイボール" + "4" + "杯",
             percentage2: "-5%",
-            value3: "レモンサワー" + "3700" + "杯",
+            value3: "レモンサワー" + "3.7" + "杯",
             percentage3: "-4%",
             iconClass: "fa fa-beer",
             percentageColor: "text-danger",
             iconBackground: "bg-gradient-warning",
-
             detail: "前日比",
           },
-
         },
         sales: {
           us: {
@@ -156,7 +168,6 @@
             cal: "230,900",
             drink: "29.9%",
             flag: PI,
-
           },
           germany: {
             name: "角打ち太郎",
@@ -164,7 +175,6 @@
             cal: "440,000",
             drink: "40.22%",
             flag: PI,
-
           },
           britain: {
             name: "歩く太郎",
@@ -172,7 +182,6 @@
             cal: "190,700",
             drink: "23.44%",
             flag: PI,
-
           },
           brasil: {
             name: "お酒好き太郎",
@@ -180,7 +189,6 @@
             cal: "143,960",
             drink: "32.14%",
             flag: PI,
-
           },
         },
       };
@@ -190,6 +198,8 @@
       GradientLineChart,
       //Carousel,
       RankingCard,
+      RegistCard,
+      ArgonButton,
     },
   };
 </script>
@@ -207,7 +217,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.125);
     margin-bottom: 25px;
   }
-
   .cup {
     width: 100px;
     /* コップの横幅を指定 */
