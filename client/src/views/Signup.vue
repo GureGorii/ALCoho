@@ -28,10 +28,10 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>アカウント登録</h5>
+              <h4>アカウントを登録</h4>
             </div>
             <div class="card-body">
-              <h7>Put Your Information</h7>
+              <h7>情報を入力してください</h7>
               <form role="form">
                 <argon-input type="text" placeholder="Name" aria-label="Name" />
                 <argon-input type="email" placeholder="Email" aria-label="Email" />
