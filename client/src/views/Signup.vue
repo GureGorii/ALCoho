@@ -128,6 +128,7 @@
         try {
           const res = await axios.post(baseUrl + '/user/signup', requestBody);
           // 成功時の処理
+          this.$router.push({ path: "/signin",})
           console.log(res.data);
         }
         catch (e) {
