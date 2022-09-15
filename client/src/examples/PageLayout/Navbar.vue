@@ -5,6 +5,11 @@
     :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'"
   >
     <div class="container ps-2 pe-0">
+      <img
+        src="../../../public/beer.png"
+        alt="profile_image"
+        class="nav-link d-flex align-items-center me-2 active "
+      />
       <router-link
         class="navbar-brand font-weight-bolder ms-lg-0 ms-3"
         :class="darkMode ? 'text-black' : 'text-white'"
