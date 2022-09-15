@@ -56,9 +56,7 @@
 <script>
   import { baseUrl } from '@/assets/config.js';
   import axios from "axios";
-  import Navbar from "@/examples/PageLayout/Navbar.vue";
-  import ArgonInput from "@/components/ArgonInput.vue";
-  import ArgonSwitch from "@/components/ArgonSwitch.vue";
+  import Navbar from "@/examples/PageLayout/Navbar.vue";;
   import ArgonButton from "@/components/ArgonButton.vue";
   const body = document.getElementsByTagName("body")[0];
 
@@ -66,8 +64,6 @@
     name: "signin",
     components: {
       Navbar,
-      ArgonInput,
-      ArgonSwitch,
       ArgonButton,
     },
     created() {
