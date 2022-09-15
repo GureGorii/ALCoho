@@ -39,16 +39,13 @@
               </div>
             </div>
             <div class="top-0 my-auto text-center col-6 d-lg-flex d-none h-100 pe-0 position-absolute end-0 justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
-          background-size: cover;"
+              <!-- <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+          background-size: cover;"> -->
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: '../assets/img/Beer.png');
+          background-size: cover;">
                 <span class="mask bg-gradient-success opacity-6"></span>
                 <h4 class="mt-5 text-white font-weight-bolder position-relative">歩いた分だけ酒がうまい</h4>
                 <p class="text-white position-relative">歩いた数に応じてお酒メータが貯まり、おいしく楽しくエネルギーを燃やしましょう</p>
-                <img
-                  src="../assets/img/team-1.jpg"
-                  alt="profile_image"
-                  class="shadow-sm w-100 border-radius-lg"
-                />
               </div>
             </div>
           </div>
