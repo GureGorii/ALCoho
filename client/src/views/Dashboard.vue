@@ -58,9 +58,6 @@
               :detail="stats.drink.detail"
               directionReverse
             >
-              <button class="btn btn-primary btn-space" @click="frmCreateAccountPopup.show(true)">
-                アカウントの作成
-              </button>
             </card>
             <!-- <carousel /> -->
           </div>
@@ -76,7 +73,7 @@
             <div class="card">
               <div class="p-3 pb-0 card-header">
                 <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">ともだち</h6>
+                  <h6 class="mb-2">フレンド</h6>
                 </div>
               </div>
               <div class="table-responsive">
@@ -119,7 +116,7 @@
             </div>
           </div>
           <div class="col-lg-5">
-            <categories-card />
+            <ranking-card />
           </div>
         </div>
       </div>
@@ -130,7 +127,7 @@
 import Card from "@/examples/Cards/Card.vue";
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
 // import Carousel from "./components/Carousel.vue";
-import CategoriesCard from "./components/CategoriesCard.vue";
+import RankingCard from "./components/CategoriesCard.vue";
 
 
 import PI from "@/assets/img/icons/flags/personicon.png";
@@ -225,7 +222,7 @@ export default {
     Card,
     GradientLineChart,
     //Carousel,
-    CategoriesCard,
+    RankingCard,
   },
 };
 </script>
