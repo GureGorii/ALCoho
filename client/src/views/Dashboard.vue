@@ -1,12 +1,10 @@
 <template>
-  <div class="py-4 container-fluid">
+   <div class="py-4 container-fluid">
     <div class="row">
       <div class="col-lg-12">
         <div class="row">
           <!-- 日付-->
-
-          <div class="col-md-4">
-
+          <div class="col-lg-4">
             <card
               :title="stats.money.title"
               :value="stats.money.value"
@@ -18,9 +16,7 @@
             ></card>
           </div>
           <!-- 今日の歩数 -->
-
-          <div class="col-md-4">
-
+          <div class="col-lg-4">
             <card
               :title="stats.users.title"
               :value="stats.users.value"
@@ -32,9 +28,7 @@
             ></card>
           </div>
           <!-- カロリー -->
-
-          <div class="col-md-4">
-
+          <div class="col-lg-4">
             <card
               :title="stats.clients.title"
               :value="stats.clients.value"
@@ -48,13 +42,16 @@
           </div>
         </div>
         <div class="row">
-
           <!-- 飲酒量  -->
           <div class="col-lg-5">
             <card
               :title="stats.drink.title"
               :value="stats.drink.value"
               :percentage="stats.drink.percentage"
+              :value2="stats.drink.value2"
+              :percentage2="stats.drink.percentage2"
+              :value3="stats.drink.value3"
+              :percentage3="stats.drink.percentage3"
               :iconClass="stats.drink.iconClass"
               :iconBackground="stats.drink.iconBackground"
               :percentageColor="stats.drink.percentageColor"
@@ -73,7 +70,7 @@
               <gradient-line-chart />
             </div>
           </div>
-
+        </div>
         <div class="row mt-4">
           <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card">
@@ -89,30 +86,30 @@
                       <td class="w-30">
                         <div class="px-2 py-1 d-flex align-items-center">
                           <div>
-                            <img :src="sale.flag" alt="Country flag" />
+                            <img :src="sale.flag" alt="person icon" />
                           </div>
                           <div class="ms-4">
-                            <p class="mb-0 text-xs font-weight-bold">Country:</p>
-                            <h6 class="mb-0 text-sm">{{ sale.country }}</h6>
+                            <p class="mb-0 text-xs font-weight-bold">名前:</p>
+                            <h6 class="mb-0 text-sm">{{ sale.name }}</h6>
                           </div>
                         </div>
                       </td>
                       <td>
                         <div class="text-center">
-                          <p class="mb-0 text-xs font-weight-bold">Sales:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.sales }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">歩数:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.step }}</h6>
                         </div>
                       </td>
                       <td>
                         <div class="text-center">
-                          <p class="mb-0 text-xs font-weight-bold">Value:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.value }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">消費カロリー:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.cal }}</h6>
                         </div>
                       </td>
                       <td class="text-sm align-middle">
                         <div class="text-center col">
-                          <p class="mb-0 text-xs font-weight-bold">Bounce:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.bounce }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">飲酒可能量:</p>
+                          <h6 class="mb-0 text-sm">{{ sale.drink }}</h6>
                         </div>
                       </td>
                     </tr>
@@ -135,10 +132,8 @@ import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
 // import Carousel from "./components/Carousel.vue";
 import CategoriesCard from "./components/CategoriesCard.vue";
 
-import US from "@/assets/img/icons/flags/US.png";
-import DE from "@/assets/img/icons/flags/DE.png";
-import GB from "@/assets/img/icons/flags/GB.png";
-import BR from "@/assets/img/icons/flags/BR.png";
+
+import PI from "@/assets/img/icons/flags/personicon.png";
 
 let d = new Date();
 let year = d.getUTCFullYear();
@@ -176,10 +171,13 @@ export default {
           detail: "前日比",
         },
         drink: {
-          title: "飲酒量",
-
+          title: "飲酒可能量",
           value: "ビール" + "3,000" + "杯",
           percentage: "-2%",
+          value2: "ハイボール" + "4000" + "杯",
+          percentage2: "-5%",
+          value3: "レモンサワー" + "3700" + "杯",
+          percentage3: "-4%",
           iconClass: "fa fa-beer",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-warning",
@@ -189,32 +187,36 @@ export default {
       },
       sales: {
         us: {
-          country: "United States",
-          sales: 2500,
-          value: "$230,900",
-          bounce: "29.9%",
-          flag: US,
+          name: "Yamada Taro",
+          step: 2500,
+          cal: "$230,900",
+          drink: "29.9%",
+          flag: PI,
+
         },
         germany: {
-          country: "Germany",
-          sales: "3.900",
-          value: "$440,000",
-          bounce: "40.22%",
-          flag: DE,
+          name: "Germany",
+          step: "3.900",
+          cal: "$440,000",
+          drink: "40.22%",
+          flag: PI,
+
         },
         britain: {
-          country: "Great Britain",
-          sales: "1.400",
-          value: "$190,700",
-          bounce: "23.44%",
-          flag: GB,
+          name: "Great Britain",
+          step: "1.400",
+          cal: "$190,700",
+          drink: "23.44%",
+          flag: PI,
+
         },
         brasil: {
-          country: "Brasil",
-          sales: "562",
-          value: "$143,960",
-          bounce: "32.14%",
-          flag: BR,
+          name: "Brasil",
+          step: "562",
+          cal: "$143,960",
+          drink: "32.14%",
+          flag: PI,
+
         },
       },
     };
