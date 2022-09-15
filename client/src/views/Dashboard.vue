@@ -65,7 +65,7 @@
             <!-- line chart -->
             <div class="card z-index-2">
               <gradient-line-chart />
-            </div>
+            </div> <!-- -->
           </div>
         </div>
         <div class="row mt-4">

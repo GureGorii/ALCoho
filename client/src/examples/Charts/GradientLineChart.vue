@@ -19,13 +19,14 @@
 <script>
 import Chart from "chart.js/auto";
 
+
 export default {
   name: "gradient-line-chart",
 
   props: {
     title: {
       type: String,
-      default: "これまでの歩数",
+      default: "１週間の歩数",
     },
     detail1: {
       type: String,
@@ -33,7 +34,7 @@ export default {
     },
     detail2: {
       type: String,
-      default: "in 2021",
+      default: "in 2022年9月",
     },
   },
 
@@ -48,13 +49,13 @@ export default {
     new Chart(ctx1, {
       type: "line",
       data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: ["日", "月", "火", "水", "木", "金", "土"],
         datasets: [
           {
-            label: "Mobile apps",
+            label: "歩数 ",
             tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#4BB543 ",
             backgroundColor: gradientStroke1,
             // eslint-disable-next-line no-dupe-keys
