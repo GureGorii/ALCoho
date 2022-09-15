@@ -69,8 +69,8 @@
             </div>
             <div class="card-body">
               <form role="form" @submit.prevent="submit">
-                <input type="text" placeholder="iD" v-model="user.userId" />
-                <input type="password" placeholder="Password" v-model="user.password" />
+                <input type="text" placeholder="iD" v-model="user.userId" class="input-form"/>
+                <input type="password" placeholder="Password" v-model="user.password" class="input-form"/>
                 <div class="text-center">
                   <argon-button fullWidth color="dark" variant="gradient" class="my-4 mb-2">Sign up</argon-button>
                 </div>
@@ -119,7 +119,6 @@
       async submit() {
         //新規登録処理
         // リクエストボディを指定する
-        console.log(this.userId, this.password)
         const requestBody = {
           userId: this.user.userId,
           password: this.user.password,
@@ -152,3 +151,14 @@
     },
   };
 </script>
+
+<style scoped>
+.input-form {
+  text-align: center;
+  min-width: 100%;
+  border-radius: 5px;
+  border: solid 1px;
+  margin-bottom: 5px;
+}
+
+</style>
