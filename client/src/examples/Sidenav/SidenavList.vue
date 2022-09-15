@@ -21,7 +21,7 @@
         <sidenav-item
           url="/billing"
           :class="getRoute() === 'billing' ? 'active' : ''"
-          :navText="'今日の飲酒量を登録する'"
+          :navText="'Regist'"
         >
           <template v-slot:icon>
             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -43,7 +43,7 @@
         <sidenav-item
           url="/signin"
           :class="getRoute() === 'signin' ? 'active' : ''"
-          :navText="'サインイン'"
+          :navText="'Sign In'"
         >
           <template v-slot:icon>
             <i class="ni ni-single-copy-04 text-danger text-sm opacity-10"></i>
@@ -54,7 +54,7 @@
         <sidenav-item
           url="/signup"
           :class="getRoute() === 'signup' ? 'active' : ''"
-          :navText="'サインアップ'"
+          :navText="'Sign Up'"
         >
           <template v-slot:icon>
             <i class="ni ni-collection text-info text-sm opacity-10"></i>
