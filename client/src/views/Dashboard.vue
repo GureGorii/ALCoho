@@ -1,67 +1,31 @@
 <template>
-   <div class="py-4 container-fluid">
+  <div class="py-4 container-fluid">
     <div class="row">
       <div class="col-lg-12">
         <div class="row">
           <!-- 日付-->
           <div class="col-lg-4">
-            <card
-              :title="stats.money.title"
-              :value="stats.money.value"
-              :percentage="stats.money.percentage"
-              :iconClass="stats.money.iconClass"
-              :iconBackground="stats.money.iconBackground"
-              :detail="stats.money.detail"
-              directionReverse
-            ></card>
+            <card :title="stats.money.title" :value="stats.money.value" :percentage="stats.money.percentage" :iconClass="stats.money.iconClass" :iconBackground="stats.money.iconBackground" :detail="stats.money.detail" directionReverse></card>
           </div>
           <!-- 今日の歩数 -->
           <div class="col-lg-4">
-            <card
-              :title="stats.users.title"
-              :value="stats.users.value"
-              :percentage="stats.users.percentage"
-              :iconClass="stats.users.iconClass"
-              :iconBackground="stats.users.iconBackground"
-              :detail="stats.users.detail"
-              directionReverse
-            ></card>
+            <card :title="stats.users.title" :value="stats.users.value" :percentage="stats.users.percentage" :iconClass="stats.users.iconClass" :iconBackground="stats.users.iconBackground" :detail="stats.users.detail" directionReverse></card>
           </div>
           <!-- カロリー -->
           <div class="col-lg-4">
-            <card
-              :title="stats.clients.title"
-              :value="stats.clients.value"
-              :percentage="stats.clients.percentage"
-              :iconClass="stats.clients.iconClass"
-              :iconBackground="stats.clients.iconBackground"
-              :percentageColor="stats.clients.percentageColor"
-              :detail="stats.clients.detail"
-              directionReverse
-            ></card>
+            <card :title="stats.clients.title" :value="stats.clients.value" :percentage="stats.clients.percentage" :iconClass="stats.clients.iconClass" :iconBackground="stats.clients.iconBackground" :percentageColor="stats.clients.percentageColor" :detail="stats.clients.detail" directionReverse></card>
           </div>
         </div>
         <div class="row">
           <!-- 飲酒量  -->
           <div class="col-lg-5">
-            <card
-              :title="stats.drink.title"
-              :value="stats.drink.value"
-              :percentage="stats.drink.percentage"
-              :value2="stats.drink.value2"
-              :percentage2="stats.drink.percentage2"
-              :value3="stats.drink.value3"
-              :percentage3="stats.drink.percentage3"
-              :iconClass="stats.drink.iconClass"
-              :iconBackground="stats.drink.iconBackground"
-              :percentageColor="stats.drink.percentageColor"
-              :detail="stats.drink.detail"
-              directionReverse
-            >
+            <card :title="stats.drink.title" :value="stats.drink.value" :percentage="stats.drink.percentage" :value2="stats.drink.value2" :percentage2="stats.drink.percentage2" :value3="stats.drink.value3" :percentage3="stats.drink.percentage3" :iconClass="stats.drink.iconClass" :iconBackground="stats.drink.iconBackground" :percentageColor="stats.drink.percentageColor" :detail="stats.drink.detail" directionReverse>
+            </card>
+            <card :title="stats.drink.title" >
             </card>
             <!-- <carousel /> -->
           </div>
-            <div class="col-lg-7 mb-lg">
+          <div class="col-lg-7 mb-lg">
             <!-- line chart -->
             <div class="card z-index-2">
               <gradient-line-chart />
@@ -124,105 +88,103 @@
   </div>
 </template>
 <script>
-import Card from "@/examples/Cards/Card.vue";
-import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
-// import Carousel from "./components/Carousel.vue";
-import RankingCard from "./components/CategoriesCard.vue";
+  import Card from "@/examples/Cards/Card.vue";
+  import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
+  // import Carousel from "./components/Carousel.vue";
+  import RankingCard from "./components/CategoriesCard.vue";
 
+  import PI from "@/assets/img/icons/flags/personicon.png";
 
-import PI from "@/assets/img/icons/flags/personicon.png";
+  let d = new Date();
+  let year = d.getUTCFullYear();
+  let month = d.getUTCMonth() + 1;
+  let day = d.getUTCDate();
 
-let d = new Date();
-let year = d.getUTCFullYear();
-let month = d.getUTCMonth() + 1;
-let day = d.getUTCDate();
+  let time = year + '年' + month + '月' + day + '日';
+  export default {
+    name: "dashboard-default",
+    data() {
+      return {
+        stats: {
+          money: {
+            value: time,
+            iconClass: "ni ni-calendar-grid-58",
+            iconBackground: "bg-gradient-primary",
+          },
+          users: {
+            title: "歩数",
+            value: "2,300" + "歩",
+            percentage: "+3%",
+            iconClass: "ni ni-user-run",
+            iconBackground: "bg-gradient-danger",
+            detail: "前週比",
+          },
+          clients: {
+            title: "消費カロリー",
+            value: "3,000" + "kcal",
+            percentage: "-2%",
+            iconClass: "fa fa-cutlery",
+            percentageColor: "text-danger",
+            iconBackground: "bg-gradient-success",
+            detail: "前日比",
+          },
+          drink: {
+            title: "飲酒可能量",
+            value: "ビール" + "3,000" + "杯",
+            percentage: "-2%",
+            value2: "ハイボール" + "4000" + "杯",
+            percentage2: "-5%",
+            value3: "レモンサワー" + "3700" + "杯",
+            percentage3: "-4%",
+            iconClass: "fa fa-beer",
+            percentageColor: "text-danger",
+            iconBackground: "bg-gradient-warning",
 
-let time = year + '年' + month + '月' + day + '日';
-export default {
-  name: "dashboard-default",
-  data() {
-    return {
-      stats: {
-        money: {
-
-          value: time,
-          iconClass: "ni ni-calendar-grid-58",
-
-          iconBackground: "bg-gradient-primary",
+            detail: "前日比",
+          },
+          
         },
-        users: {
-          title: "歩数",
-          value: "2,300" + "歩",
-          percentage: "+3%",
-          iconClass: "ni ni-user-run",
-          iconBackground: "bg-gradient-danger",
-          detail: "前週比",
-        },
-        clients: {
-          title: "消費カロリー",
-          value: "3,000" + "kcal",
-          percentage: "-2%",
-          iconClass: "fa fa-cutlery",
-          percentageColor: "text-danger",
-          iconBackground: "bg-gradient-success",
-          detail: "前日比",
-        },
-        drink: {
-          title: "飲酒可能量",
-          value: "ビール" + "3,000" + "杯",
-          percentage: "-2%",
-          value2: "ハイボール" + "4000" + "杯",
-          percentage2: "-5%",
-          value3: "レモンサワー" + "3700" + "杯",
-          percentage3: "-4%",
-          iconClass: "fa fa-beer",
-          percentageColor: "text-danger",
-          iconBackground: "bg-gradient-warning",
+        sales: {
+          us: {
+            name: "ハイボール愛子",
+            step: 2500,
+            cal: "230,900",
+            drink: "29.9%",
+            flag: PI,
 
-          detail: "前日比",
-        },
-      },
-      sales: {
-        us: {
-          name: "Yamada Taro",
-          step: 2500,
-          cal: "$230,900",
-          drink: "29.9%",
-          flag: PI,
+          },
+          germany: {
+            name: "角打ち太郎",
+            step: "3.900",
+            cal: "440,000",
+            drink: "40.22%",
+            flag: PI,
 
-        },
-        germany: {
-          name: "Germany",
-          step: "3.900",
-          cal: "$440,000",
-          drink: "40.22%",
-          flag: PI,
+          },
+          britain: {
+            name: "歩く太郎",
+            step: "1.400",
+            cal: "190,700",
+            drink: "23.44%",
+            flag: PI,
 
-        },
-        britain: {
-          name: "Great Britain",
-          step: "1.400",
-          cal: "$190,700",
-          drink: "23.44%",
-          flag: PI,
+          },
+          brasil: {
+            name: "お酒好き太郎",
+            step: "562",
+            cal: "143,960",
+            drink: "32.14%",
+            flag: PI,
 
+          },
         },
-        brasil: {
-          name: "Brasil",
-          step: "562",
-          cal: "$143,960",
-          drink: "32.14%",
-          flag: PI,
-
-        },
-      },
-    };
-  },
-  components: {
-    Card,
-    GradientLineChart,
-    //Carousel,
-    RankingCard,
-  },
-};
+      };
+    },
+    components: {
+      Card,
+      GradientLineChart,
+      //Carousel,
+      RankingCard,
+    },
+  };
 </script>
