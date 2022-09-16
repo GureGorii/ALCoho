@@ -60,19 +60,19 @@
                 </div>
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label"
-                    >基礎代謝</label
+                    >基礎代謝 (kcal)</label
                   >
                   <argon-input type="text" value="1502" />
                 </div>
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label"
-                    >身長</label
+                    >身長 (cm)</label
                   >
                   <input class="form-control" type="text" value="162" />
                 </div>
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label"
-                    >体重</label
+                    >体重 (kg)</label
                   >
                   <argon-input type="text" value="48" />
                 </div>
@@ -86,7 +86,7 @@
                   >
                   <argon-input
                     type="text"
-                    value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source."
+                    value="よろしくお願いします。"
                   />
                 </div>
               </div>

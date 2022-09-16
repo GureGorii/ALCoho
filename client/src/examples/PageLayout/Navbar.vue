@@ -6,9 +6,10 @@
   >
     <div class="container ps-2 pe-0">
       <img
-        src="../../../public/beer.png"
+        src="../../assets/img/ALCoho.png"
         alt="profile_image"
         class="nav-link d-flex align-items-center me-2 active "
+        style="width: 90px"
       />
       <router-link
         class="navbar-brand font-weight-bolder ms-lg-0 ms-3"

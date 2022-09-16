@@ -15,7 +15,7 @@
       <router-link class="m-0 navbar-brand" to="/">
         <h3 class="ms-2 font-weight-bold me-2">
           <img
-          src="../../../public/beer.png"
+          src="../../assets/img/ALCoho.png"
           alt="profile_image"
           class="shadow-sm w-20 border-radius-lg"
         />
