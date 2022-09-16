@@ -18,6 +18,7 @@
 
 <script>
   import Chart from "chart.js/auto";
+  import createNum from "../../logic/createNum.js"
 
   export default {
     name: "gradient-line-chart",
@@ -289,10 +290,7 @@
       const sdata = this.sdata;
       //var status = sdata.id[num[7]] / sdata.id[num[6]] * 100;
       var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
-      var num = new Array(30);
-      for (var i = 0; i < 30; i++) {
-        num[i] = Math.floor(Math.random() * 30);
-      };
+      const num = createNum
       //export { num };
       gradientStroke1.addColorStop(1, "rgba(94, 114, 228, 0.2)");
       gradientStroke1.addColorStop(0.2, "rgba(94, 114, 228, 0.0)");
