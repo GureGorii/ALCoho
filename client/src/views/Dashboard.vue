@@ -27,7 +27,7 @@
           <!-- 飲酒量  -->
           <div class="col-lg-5">
 
-            <card :title="stats.drink.title" :value="stats.drink.value" :percentage="stats.drink.percentage" :iconClass="stats.drink.iconClass" :iconBackground="stats.drink.iconBackground" :percentageColor="stats.drink.percentageColor" :detail="stats.drink.detail" directionReverse>
+            <card :title="stats.drink.title" :value="(sdata.id[num].aDayCalorie /140).toFixed(3)" :percentage="stats.drink.percentage" :iconClass="stats.drink.iconClass" :iconBackground="stats.drink.iconBackground" :percentageColor="stats.drink.percentageColor" :detail="stats.drink.detail" directionReverse>
 
             </card>
             <div class="col">
@@ -42,7 +42,7 @@
                   </div>
                 </div>
 
-                <p>今日の飲めるお酒!!: <span>ビール✖︎2</span></p>
+                <!--<p>今日の飲めるお酒!!: <span>ビール✖︎2</span></p -->
                 <div class="cup"></div>
 
               </div>
@@ -87,14 +87,14 @@
                       </td>
                       <td>
                         <div class="text-center">
-                          <p class="mb-0 text-xs font-weight-bold">消費カロリー:</p>
+                          <p class="mb-0 text-xs font-weight-bold">消費カロリー(kcal):</p>
                           <h6 class="mb-0 text-sm">{{ sale.cal }}</h6>
                         </div>
                       </td>
                       <td class="text-sm align-middle">
                         <div class="text-center col">
-                          <p class="mb-0 text-xs font-weight-bold">飲酒可能量:</p>
-                          <h6 class="mb-0 text-sm">{{ sale.drink }}</h6>
+                          <p class="mb-0 text-xs font-weight-bold">今日飲んで良い量 (杯):</p>
+                          <h6 class="mb-0 text-sm">{{ sdata.id[num].aDayCalorie }}</h6>
                         </div>
                       </td>
                     </tr>
@@ -143,7 +143,7 @@
             detail: "前週比",
           },
           clients: {
-            title: "消費カロリー",
+            title: "消費カロリー(kcal)",
             value: "3,000" + "kcal",
             percentage: "-2%",
             iconClass: "fa fa-cutlery",
@@ -152,13 +152,9 @@
             detail: "前日比",
           },
           drink: {
-            title: "飲酒可能量",
+            title: "今日飲んで良い量 (杯)",//こっち
             value: "ビール" + "3" + "杯",
             percentage: "-2%",
-            value2: "ハイボール" + "4" + "杯",
-            percentage2: "-5%",
-            value3: "レモンサワー" + "3.7" + "杯",
-            percentage3: "-4%",
             iconClass: "fa fa-beer",
             percentageColor: "text-danger",
             iconBackground: "bg-gradient-warning",
@@ -202,7 +198,7 @@
             index: 0,
             date: 1, //
             step: 514, //
-            aDayCalorie: 514 / 100 * 3.5, //  100歩で3.5Kcal
+            aDayCalorie: (514 / 100 * 3.5).toFixed(3), //  100歩で3.5Kcal
             basalMetabolism: 1530
           },
 
@@ -210,7 +206,7 @@
             index: 1,
             date: 2,
             step: 14913,
-            aDayCalorie: 14913 / 100 * 3.5,
+            aDayCalorie: (14913 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -218,7 +214,7 @@
             index: 2,
             date: 3,
             step: 9786,
-            aDayCalorie: 9786 / 100 * 3.5,
+            aDayCalorie: (9786 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -226,7 +222,7 @@
             index: 3,
             date: 4,
             step: 3631,
-            aDayCalorie: 3631 / 100 * 3.5,
+            aDayCalorie: (3631 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -234,7 +230,7 @@
             index: 4,
             date: 5,
             step: 2393,
-            aDayCalorie: 2393 / 100 * 3.5,
+            aDayCalorie: (2393 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -242,7 +238,7 @@
             index: 5,
             date: 6,
             step: 6260,
-            aDayCalorie: 6260 / 100 * 3.5,
+            aDayCalorie: (6260 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -250,7 +246,7 @@
             index: 6,
             date: 7,
             step: 5933,
-            aDayCalorie: 5933 / 100 * 3.5,
+            aDayCalorie: (5933 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -258,7 +254,7 @@
             index: 7,
             date: 8,
             step: 6974,
-            aDayCalorie: 6974 / 100 * 3.5,
+            aDayCalorie: (6974 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -266,7 +262,7 @@
             index: 8,
             date: 9,
             step: 8460,
-            aDayCalorie: 8460 / 100 * 3.5,
+            aDayCalorie: (8460 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -274,7 +270,7 @@
             index: 9,
             date: 10,
             step: 6539,
-            aDayCalorie: 6539 / 100 * 3.5,
+            aDayCalorie: (6539 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -282,7 +278,7 @@
             index: 10,
             date: 11,
             step: 7187,
-            aDayCalorie: 7187 / 100 * 3.5,
+            aDayCalorie: (7187 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -290,7 +286,7 @@
             index: 11,
             date: 12,
             step: 11763,
-            aDayCalorie: 11763 / 100 * 3.5,
+            aDayCalorie: (11763 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -298,7 +294,7 @@
             index: 12,
             date: 13,
             step: 14322,
-            aDayCalorie: 14322 / 100 * 3.5,
+            aDayCalorie: (14322 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -306,7 +302,7 @@
             index: 13,
             date: 14,
             step: 881,
-            aDayCalorie: 881,
+            aDayCalorie: (881 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -314,7 +310,7 @@
             index: 14,
             date: 15,
             step: 6517,
-            aDayCalorie: 6571 / 100 * 3.5,
+            aDayCalorie: (6571 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -322,7 +318,7 @@
             index: 15,
             date: 16,
             step: 1946,
-            aDayCalorie: 1946 / 100 * 3.5,
+            aDayCalorie: (1946 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -330,7 +326,7 @@
             index: 16,
             date: 17,
             step: 8185,
-            aDayCalorie: 8185 / 100 * 3.5,
+            aDayCalorie: (8185 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -338,7 +334,7 @@
             index: 17,
             date: 18,
             step: 13227,
-            aDayCalorie: (13227 / 100) * 3.5,
+            aDayCalorie: (13227 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -346,7 +342,7 @@
             index: 18,
             date: 19,
             step: 411,
-            aDayCalorie: 411 / 100 * 3.5,
+            aDayCalorie: (411 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -354,7 +350,7 @@
             index: 19,
             date: 20,
             step: 9185,
-            aDayCalorie: 9185 / 100 * 3.5,
+            aDayCalorie: (9185 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -362,7 +358,7 @@
             index: 20,
             date: 21,
             step: 3340,
-            aDayCalorie: 3340 / 100 * 3.5,
+            aDayCalorie: (3340 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -370,7 +366,7 @@
             index: 21,
             date: 22,
             step: 1201,
-            aDayCalorie: 1201 / 100 * 3.5,
+            aDayCalorie: (1201 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -378,7 +374,7 @@
             index: 22,
             date: 23,
             step: 9604,
-            aDayCalorie: 9604 / 100 * 3.5,
+            aDayCalorie: (9604 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -386,7 +382,7 @@
             index: 23,
             date: 24,
             step: 8552,
-            aDayCalorie: 8552 / 100 * 3.5,
+            aDayCalorie: (8552 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -394,7 +390,7 @@
             index: 24,
             date: 25,
             step: 307,
-            aDayCalorie: 307 / 100 * 3.5,
+            aDayCalorie: (307 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -402,7 +398,7 @@
             index: 25,
             date: 26,
             step: 8455,
-            aDayCalorie: 8455 / 100 * 3.5,
+            aDayCalorie: (8455 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -410,7 +406,7 @@
             index: 26,
             date: 27,
             step: 9560,
-            aDayCalorie: 9560 / 100 * 3.5,
+            aDayCalorie: (9560 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -418,7 +414,7 @@
             index: 27,
             date: 28,
             step: 9376,
-            aDayCalorie: 9376 / 100 * 3.5,
+            aDayCalorie: (9376 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -426,7 +422,7 @@
             index: 28,
             date: 29,
             step: 3111,
-            aDayCalorie: 3111 / 100 * 3.5,
+            aDayCalorie: (3111 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           },
 
@@ -434,7 +430,7 @@
             index: 29,
             date: 30,
             step: 8700,
-            aDayCalorie: 8700 / 100 * 3.5,
+            aDayCalorie: (8700 / 100 * 3.5).toFixed(3),
             basalMetabolism: 1530
           }
         ]
@@ -449,7 +445,11 @@
     computed: {
       num: function() {
         return Math.floor(Math.random() * 30)
+      },
+      /*candrink: function(){
+        return sdata.id[num].aDayCalorie / 140
       }
+      */
     },
     components: {
       Card,
