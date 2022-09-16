@@ -6,7 +6,9 @@
       <breadcrumbs :currentPage="currentRouteName" textWhite="text-white" />
       <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" :class="this.$store.state.isRTL ? 'px-0' : 'me-sm-4'" id="navbar">
         <div class="pe-md-3 d-flex align-items-center" :class="this.$store.state.isRTL ? 'me-md-auto' : 'ms-md-auto'">
-          <p class="signout-button" @click="logout">Sign Out</p>
+          <div>
+            <p class="signout-button" @click="logout">Sign Out</p>
+          </div>
         </div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -123,7 +125,10 @@
       computed: {
         currentRouteName() {
           return this.$route.name;
-        }
+        },
+        isLogined() {
+          return this.$store.state.user.tokens;
+        },
       }
     }
   }
