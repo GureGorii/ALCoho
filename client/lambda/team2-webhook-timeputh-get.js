@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
         response.body = JSON.stringify({
             items,
         });
-
+        //デモ用で用意できているのは0915~0919
         const healthId = 20220915;
         
         for (let i = 0; i < items.length; i++) {
@@ -46,11 +46,11 @@ exports.handler = async (event, context) => {
             var res = (await dynamo.get(param).promise()).Item;
             console.log(res);
             
-            var lineId = items[0].lineId;
+            var lineId = items[i].lineId;
             
             var num_cal = res.steps * 0.04 + res.cal;
             //1本140kcalで換算
-            var drink = num_cal/140;
+            var drink = num_cal/160;
             
             var par = {
                 "to": lineId,
