@@ -141,7 +141,7 @@
             percentage: "+3%",
             iconClass: "ni ni-user-run",
             iconBackground: "bg-gradient-danger",
-            detail: "前週比",
+            detail: "前日比",
           },
           clients: {
             title: "消費カロリー(kcal)",
