@@ -8,36 +8,34 @@ const routes = [
   {
     path: "/",
     name: "/",
-    // meta: {
-    //   requiresAuth: true
-    // }
+    redirect: "/dashboard-default"
   },
   {
     path: "/dashboard-default",
     name: "Dashboard",
-    component: Dashboard,
-    // meta: {
-    //   requiresAuth: true
-    // }
+    component: Dashboard,git
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/profile",
     name: "Profile",
     component: Profile,
-    // meta: {
-    //   requiresAuth: true
-    // }
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/signin",
     name: "Signin",
-    // redirect: window.localStorage.getItem("token") && "/dashboard-default",
+    redirect: window.localStorage.getItem("token") && "/dashboard-default",
     component: Signin,
   },
   {
     path: "/signup",
     name: "Signup",
-    // redirect: window.localStorage.getItem("token") && "/dashboard-default",
+    redirect: window.localStorage.getItem("token") && "/dashboard-default",
     component: Signup,
   },
 
@@ -49,23 +47,23 @@ const router = createRouter({
   linkActiveClass: "active",
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (window.localStorage.getItem("token")) {
-//       next({
-//         path: '/Signin',
-//         query: {
-//           redirect: to.fullPath
-//         }
-//       })
-//     }
-//     else {
-//       next();
-//     }
-//   }
-//   else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!window.localStorage.getItem("token")) {
+      next({
+        path: '/signin',
+        query: {
+          redirect: to.fullPath
+        }
+      })
+    }
+    else {
+      next();
+    }
+  }
+  else {
+    next();
+  }
+});
 
 export default router;
