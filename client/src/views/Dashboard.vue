@@ -112,7 +112,7 @@
   import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
   // import Carousel from "./components/Carousel.vue";
   import RankingCard from "./components/CategoriesCard.vue";
-  import RegistCard from "./components/RegistCard.vue" ;
+  // import RegistCard from "./components/RegistCard.vue" ;
   import ArgonButton from "@/components/ArgonButton.vue";
   import PI from "@/assets/img/icons/flags/personicon.png";
   let d = new Date();
@@ -198,7 +198,7 @@
       GradientLineChart,
       //Carousel,
       RankingCard,
-      RegistCard,
+      // RegistCard,
       ArgonButton,
     },
   };
