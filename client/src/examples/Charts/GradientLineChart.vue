@@ -285,7 +285,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "１週間の歩数",
+      default: "先週１週間の歩数",
     },
     detail1: {
       type: String,

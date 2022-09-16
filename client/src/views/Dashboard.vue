@@ -19,7 +19,7 @@
           <div class="col-lg-4">
             <card
               :title="stats.users.title"
-              :value="sdata.id[Math.floor( Math.random() * 30 )].step"
+              :value="sdata.id[num].step"
               :percentage="stats.users.percentage"
               :iconClass="stats.users.iconClass"
               :iconBackground="stats.users.iconBackground"
@@ -31,7 +31,7 @@
           <div class="col-lg-4">
             <card
               :title="stats.clients.title"
-              :value="sdata.id[Math.floor( Math.random() * 30 )].aDayCalorie"
+              :value="sdata.id[num].aDayCalorie"
               :percentage="stats.clients.percentage"
               :iconClass="stats.clients.iconClass"
               :iconBackground="stats.clients.iconBackground"
@@ -173,7 +173,6 @@ export default {
           iconClass: "fa fa-beer",
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-warning",
-
           detail: "前日比",
         },
       },
@@ -459,6 +458,11 @@ export default {
     },
       
     };
+  },
+  computed:{
+    num:function(){
+      return Math.floor( Math.random() * 30 )
+    }
   },
   components: {
     Card,
