@@ -39,7 +39,7 @@
               </div>
             </div>
             <div class="top-0 my-auto text-center col-6 d-lg-flex d-none h-100 pe-0 position-absolute end-0 justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');　background-size: cover;">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');background-size: cover;">
                 <span class="mask bg-gradient-success opacity-6"></span>
                 <h4 class="mt-5 text-white font-weight-bolder position-relative">歩いた分だけ酒がうまい</h4>
                 <p class="text-white position-relative">歩いた数に応じてお酒メータが貯まり、おいしく楽しくエネルギーを燃やしましょう</p>
@@ -96,8 +96,8 @@
           // 成功時の処理
           window.localStorage.setItem('token', res.data.token);
           window.localStorage.setItem('userId', this.user.userId)
-          this.tokens = window.localStorage.getItem("token")
-          this.$store.dispatch("setTokens", this.tokens).then(() => {
+
+          this.$store.dispatch("setTokens").then(() => {
             this.$router.push({ name: "Dashboard", })
           });
         }
