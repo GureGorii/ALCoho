@@ -8,25 +8,25 @@ const routes = [
   {
     path: "/",
     name: "/",
-    meta: {
-      requiresAuth: true
-    }
+    // meta: {
+    //   requiresAuth: true
+    // }
   },
   {
     path: "/dashboard-default",
     name: "Dashboard",
     component: Dashboard,
-    meta: {
-      requiresAuth: true
-    }
+    // meta: {
+    //   requiresAuth: true
+    // }
   },
   {
     path: "/profile",
     name: "Profile",
     component: Profile,
-    meta: {
-      requiresAuth: true
-    }
+    // meta: {
+    //   requiresAuth: true
+    // }
   },
   {
     path: "/signin",
