@@ -19,7 +19,6 @@ export default createStore({
     layout: "default",
     user: {
       userId: "",
-      password: "",
       weight: 60,
       height: 170,
       tokens: "",
