@@ -126,6 +126,7 @@
       return {
         stats: {
           money: {
+            title: "日付",
             value: time,
             iconClass: "ni ni-calendar-grid-58",
             iconBackground: "bg-gradient-primary",
