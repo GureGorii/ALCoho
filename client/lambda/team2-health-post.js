@@ -1,6 +1,7 @@
+//ヘルスケア情報の追加
 const AWS = require("aws-sdk");
 const dynamo = new AWS.DynamoDB.DocumentClient();
-const TableName = "Team2Article";
+const TableName = "Health";
 
 exports.handler = async (event, context) => {
   const response = {
@@ -10,11 +11,6 @@ exports.handler = async (event, context) => {
     },
     body: JSON.stringify({ message: "" }),
   };
-
-  // TODO: リクエストボディの中身をJavaScriptオブジェクトに変換し、1つ、あるいは複数の変数に代入する
-  const { userId, text, category,like } = JSON.parse(event.body);
-  const timestamp = Date.now();
-  
   //Tokenの認証
   if (event.headers.authorization !== "mtiToken") {
     response.statusCode = 500;
@@ -23,19 +19,36 @@ exports.handler = async (event, context) => {
     });
     return response;
   }
-  // TODO: DBに登録するための情報をparamオブジェクトとして宣言する（中身を記述）
+  //日付けをdd-mm-yyyyで取得する
+  let formatted_date
+  var date = new Date();
+  if (date.getMonth() + 1 < 10) {
+    var formatDate = (date) => {
+      formatted_date = String(date.getFullYear()) + String(0) + String(date.getMonth() + 1) + String(date.getDate());
+      return Number(formatted_date);
+    }
+  }
+  else {
+    var formatDate = (date) => {
+      formatted_date = String(date.getFullYear()) + String(date.getMonth() + 1) + String(date.getDate());
+      return Number(formatted_date);
+    }
+  }
+
+  // TODO: リクエストボディの中身をJavaScriptオブジェクトに変換し、1つ、あるいは複数の変数に代入する
+  const { userId, steps, drinks, cal } = JSON.parse(event.body)
+  const healthId = formatDate(date)
+  // TODO: paramに更新対象のテーブル名と更新内容を記述
   const param = {
-    // ↓プロパティ名と変数名が同一の場合は、値の指定を省略できる。
-    TableName, // TableName: TableNameと同じ意味
+    TableName,
     Item: {
       userId,
-      text,
-      category,
-      timestamp,
-      like
+      healthId,
+      steps,
+      drinks,
+      cal
     }
   };
-
 
   try {
     // dynamo.put()でDBにデータを登録
@@ -43,8 +56,9 @@ exports.handler = async (event, context) => {
     // TODO: 登録に成功した場合の処理を記載する。(status codeの設定と、response bodyの設定)
     response.statusCode = 201;
 
-    response.body = JSON.stringify({ userId, text, category, timestamp,like });
+    response.body = JSON.stringify({ userId, healthId, steps, drinks, cal });
   }
+
   catch (e) {
     response.statusCode = 500;
     response.body = JSON.stringify({

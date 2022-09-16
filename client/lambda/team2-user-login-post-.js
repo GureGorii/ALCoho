@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 const dynamo = new AWS.DynamoDB.DocumentClient();
-const TableName = "User";
+const TableName = "UserInfo";
 
 exports.handler = async (event, context) => {
   const response = {
@@ -12,8 +12,9 @@ exports.handler = async (event, context) => {
   };
   
   // TODO: リクエストボディの中身をJavaScriptオブジェクトに変換し、1つ、あるいは複数の変数に代入する
-  const {userId,password} = JSON.parse(event.body);
+  const {userId,password,api} = JSON.parse(event.body);
   // TODO: query()に渡すパラムを宣言
+  
   const param = {
     TableName,
     //キー、インデックスによる検索の定義

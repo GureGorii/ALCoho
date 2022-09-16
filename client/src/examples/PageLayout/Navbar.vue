@@ -5,11 +5,16 @@
     :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'"
   >
     <div class="container ps-2 pe-0">
+      <img
+        src="../../../public/beer.png"
+        alt="profile_image"
+        class="nav-link d-flex align-items-center me-2 active "
+      />
       <router-link
         class="navbar-brand font-weight-bolder ms-lg-0 ms-3"
         :class="darkMode ? 'text-black' : 'text-white'"
         to="/"
-        >Argon Dashboard 2</router-link
+        >ALcoho</router-link
       >
       <button
         class="shadow-none navbar-toggler ms-2"
@@ -71,16 +76,6 @@
               ></i>
               Sign In
             </router-link>
-          </li>
-        </ul>
-        <ul class="navbar-nav d-lg-block d-none">
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com/product/vue-argon-dashboard"
-              class="btn btn-sm mb-0 me-1"
-              :class="isBtn"
-              >Free download</a
-            >
           </li>
         </ul>
       </div>
