@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Vue Argon Dashboard 2 - v3.0.0
-=========================================================
-
-* Product Page: https://creative-tim.com/product/vue-argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <template>
   <div v-show="this.$store.state.layout === 'landing'" class="landing-bg h-100 bg-gradient-primary position-fixed w-100"></div>
   <sidenav :custom_class="this.$store.state.mcolor" :class="[
@@ -64,7 +50,8 @@ Coded by www.creative-tim.com
       this.$store.state.isTransparent = "bg-transparent";
     },
     created() {
-      this.$store.dispatch("setTokens", window.localStorage.getItem('token') ? window.localStorage.getItem('token') : "")
+      this.$store.dispatch("setTokens")
     },
+
   };
 </script>

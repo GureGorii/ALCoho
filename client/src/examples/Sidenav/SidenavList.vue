@@ -55,7 +55,7 @@
     },
     computed: {
       isLogined() {
-        return this.$store.state.tokens;
+        return this.$store.state.user.tokens;
       }
     },
     components: {
