@@ -281,6 +281,12 @@ export default {
 
     };
   },
+  
+  computed:{
+    num:function(){
+      //return sdata.id[num[7]].step/sdata.id[num[6]].step;
+    }
+  },
 
   props: {
     title: {
