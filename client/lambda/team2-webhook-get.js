@@ -65,7 +65,7 @@ exports.handler = async (event, context) => {
             "messages":[
                 {
                     "type":"text",
-                    "text":"ユーザー登録が完了しました"
+                    "text":`${userId}さんの登録が完了しました`
                 }
                 ]
             }       
