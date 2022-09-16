@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/dashboard-default",
     name: "Dashboard",
-    component: Dashboard,git
+    component: Dashboard,
     meta: {
       requiresAuth: true
     }
@@ -38,7 +38,6 @@ const routes = [
     redirect: window.localStorage.getItem("token") && "/dashboard-default",
     component: Signup,
   },
-
 ];
 
 const router = createRouter({
