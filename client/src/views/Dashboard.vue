@@ -94,7 +94,7 @@
                       <td class="text-sm align-middle">
                         <div class="text-center col">
                           <p class="mb-0 text-xs font-weight-bold">今日飲んで良い量 (杯):</p>
-                          <h6 class="mb-0 text-sm">{{ sdata.id[num].aDayCalorie }}</h6>
+                          <h6 class="mb-0 text-sm">{{ sale.drink }}</h6>
                         </div>
                       </td>
                     </tr>
@@ -136,7 +136,7 @@
             iconBackground: "bg-gradient-primary",
           },
           users: {
-            title: "歩数",
+            title: "歩数 (歩)",
             value: "2,300" + "歩",
             percentage: "+3%",
             iconClass: "ni ni-user-run",
@@ -165,30 +165,30 @@
         sales: {
           us: {
             name: "ハイボール愛子",
-            step: 2500,
-            cal: "230,900",
-            drink: "29.9%",
+            step: "2,500",
+            cal: "23",
+            drink: (23 / 140).toFixed(3),
             flag: PI,
           },
           germany: {
             name: "角打ち太郎",
-            step: "3.900",
-            cal: "440,000",
-            drink: "40.22%",
+            step: "3,900",
+            cal: "40.4",
+            drink: (40.4 / 140).toFixed(3),
             flag: PI,
           },
           britain: {
             name: "歩く太郎",
-            step: "1.400",
-            cal: "190,700",
-            drink: "23.44%",
+            step: "1,400",
+            cal: "19.7",
+            drink: (19.7 / 140).toFixed(3),
             flag: PI,
           },
           brasil: {
             name: "お酒好き太郎",
-            step: "562",
-            cal: "143,960",
-            drink: "32.14%",
+            step: "16,200",
+            cal: "193.96",
+            drink: (193.96 /140).toFixed(3),
             flag: PI,
           },
         },
