@@ -44,7 +44,7 @@
             .isAbsolute,
           "px-0 mx-4": !this.$store.state.isAbsolute
         };
-      }
+      },
     },
     beforeMount() {
       this.$store.state.isTransparent = "bg-transparent";
@@ -52,6 +52,5 @@
     created() {
       this.$store.dispatch("setTokens")
     },
-
   };
 </script>
