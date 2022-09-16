@@ -6,6 +6,7 @@
       <breadcrumbs :currentPage="currentRouteName" textWhite="text-white" />
       <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" :class="this.$store.state.isRTL ? 'px-0' : 'me-sm-4'" id="navbar">
         <div class="pe-md-3 d-flex align-items-center" :class="this.$store.state.isRTL ? 'me-md-auto' : 'ms-md-auto'">
+          <p class="signout-button" @click="logout">Sign Out</p>
         </div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -104,15 +105,37 @@
       toggleSidebar() {
         this.toggleSidebarColor("bg-white");
         this.navbarMinimize();
-      }
-    },
-    components: {
-      Breadcrumbs
-    },
-    computed: {
-      currentRouteName() {
-        return this.$route.name;
+      },
+      async logout() {
+        try {
+          this.$store.dispatch("logoutAction")
+          window.localStorage.clear()
+          this.$router.push({ name: "Signin" })
+        }
+        catch (e) {
+          alert('ログアウトに失敗しました。')
+          console.log(e)
+        }
+      },
+      components: {
+        Breadcrumbs
+      },
+      computed: {
+        currentRouteName() {
+          return this.$route.name;
+        }
       }
     }
-  };
+  }
 </script>
+<style type="text/css">
+  .signout-button {
+    margin: 0;
+    color: #fff;
+  }
+
+  .signout-button:hover {
+    cursor: pointer;
+    opacity: 0.4;
+  }
+</style>
